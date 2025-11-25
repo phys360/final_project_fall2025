@@ -1,0 +1,429 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "PHYS 360 - Computational Physics",
+    "section": "",
+    "text": "Any computational course is strongly coupled to practical examples with the end goal of tackling comprehensive research-related projects. The intermediate step to reach that goal is a culminating experience to use the skills from this computational course and apply them to solving an interesting problem in the given time frame. Therefore, the final project builds a bridge from course work to research work. It can deepen our physical understanding by exploring topics of interest in greater depth. Importantly, the final project provides an opportunity to collaborate, interact and communicate physics. The end product will be an oral presentation and a written report."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "",
+    "text": "This project will use the Fourier transform to clean noise from an electrocardiogram (ECG) signal. ECG signals measure electrical activity of the heart, but in real life situations they often contain noise from breathing, electrical interference, and most of all movement. In this project I will generate a simple ECG-like signal, add artificial noise, and then use the Fourier transform to filter the noise."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#summary",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#summary",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "",
+    "text": "This project will use the Fourier transform to clean noise from an electrocardiogram (ECG) signal. ECG signals measure electrical activity of the heart, but in real life situations they often contain noise from breathing, electrical interference, and most of all movement. In this project I will generate a simple ECG-like signal, add artificial noise, and then use the Fourier transform to filter the noise."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#background",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#background",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "Background",
+    "text": "Background\nECGs are one of the most used diagnostic tools in medicine. Proper preparations aim to limit noise but the raw signal almost always contains some unwanted noise. According to a technical guide from GE HealthCare, this noise can come from fluorescent light, cell phoones, Bluetooth devices, or physical movement of a patient. A review by Luo & Johnston (2010) explains that ECG filtering is an essential preprocessing step. Noise can hide features like the P wave, QRS complex, and T wave. They also discuss how different types of noise require different filtering strategies, and how filtering must be done carefully to avoid the diagnostic information.\nThe Fourier transform is a common way to separate a signal into its frequency components. This can aid in removing noise such as 60 Hz power-line interference. Because an ECG consists of a lot of data points, and filtering involves modifying the whole frequency spectrum, a computational approach is a fitting practical method."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#results",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#results",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "Results",
+    "text": "Results\nI expect to make several plots showing 3 things: a clean ECG-like signal, a noisy version after adding interference, the filtered signal after operating the Fourier transform.\nBefore filtering I expect to see a dominant frequency that simulates a heartbeat along with noise components. After filtering, the inverse Fourier transform should reconstruct it to look like the original clean signal.\nA basic ECG waveform contains a big number of time points, and the Fourier transform formula alone requires combining every point using exponentials. Each component is computed using a sum over the entire signal, meaning lots of work. Also, the output of the transform should be interpreted visually and without a computer we cannot picture the signal by looking at numbers."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#summaryquestions",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#summaryquestions",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "Summary/Questions",
+    "text": "Summary/Questions\nThe specific question this project aims to answer is:\n\n“Can the Fourier transform effectively isolate and recover a heartbeat signal from noisy ECG data?”\n\nI expect the filtered signal to closely resemble the clean waveform before noise was added. Similar results are reported in ECG-filtering research like that of Luo & Johnston (2010), where frequency-based filtering is shown to be effective for removing power-line and baseline-wander noise. My project is a simplified version of these real-world techniques and demonstrates the use of computational tools in the medical field.\n\nReferences\n\nLuo,S., & Johnston, P. (2010). A review of electrocardiogram filtering. Journal of Electrocardiology, 43(6), 486-496.\nGE HealthCare. (2023) A guide to ECG signal filtering."
+  },
+  {
+    "objectID": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#comments",
+    "href": "posts/submissions/coronakristy_159802_27029486_Project_Proposal.html#comments",
+    "title": "Using the Fourier Transform to Filter Noise from an ECG Signal",
+    "section": "Comments",
+    "text": "Comments\nGood project with references and a clear question. The Fourier transform was not covered in the class, but NumPy provides Fourier transforms with numpy.fft.fft() The scope is reasonable and it uses numerical approaches (FFT).\n\nYou can use the phone’s accelerator with the PhyPhox app to measure the heart rate.\nIt is possible to add random noise to your data and then apply your filtering methods\nIt is possible to compare data with real data from Physionet or elsewhere.\nWill you use a particular model? How noisy is too noisy? How will you create the noise in your data? Are you using real data?"
+  },
+  {
+    "objectID": "posts/submissions/espinovictoria_107057_27025750_Untitled.html",
+    "href": "posts/submissions/espinovictoria_107057_27025750_Untitled.html",
+    "title": "Rocket Trajectory",
+    "section": "",
+    "text": "Using Python I will explore the numerical simulation of a rockets trajectory. Because rocket motion involves nonlinear forces such as gravity, atmoshperic drag, and is time-dependent, using computational methods in python will make calculating a rockets motion much more simpler than trying to do so analytically. Numerical integration will allow me to show the rockets position, velocity and acceleration over time. By creating multiple situations I will be able to show the difference in accuracy and stability.\nA computational approach is required to model the forces acting on the rocket, integrate the equations of motion, and predict the trajectory with sufficient accuracy. Because rocket trajectory is very important in fields such as aerospace engineering and orbital mechanics there are many uses for these types of computations.\nMy results will include simulated altitude, velocity and acceleration over time with graphs. I will create scenarios to try to determine when more accurate numerical methods become necessary such as change in thrust or atmospheric drag. Possibly also using these methods to demonstrate rocket trajectory given different environments or on different planets.\nI hope to be able to answer how accurately we can model a rockets flight using python. I also hope to be able to determine how sensitive trajectory predictions are. I will be able to compare my numerical results with actual rocket trajectory data."
+  },
+  {
+    "objectID": "posts/submissions/espinovictoria_107057_27025750_Untitled.html#comments",
+    "href": "posts/submissions/espinovictoria_107057_27025750_Untitled.html#comments",
+    "title": "Rocket Trajectory",
+    "section": "Comments",
+    "text": "Comments\nA good project to reinforce the topics learned in this class. It is time to focus a bit more on a specific trajectory as everything together is quite complex.\n\nWill you use a variable mass for the rocket (fuel burned)\nDo you include the change in air density?\nIs the thrust a constant, or time-dependent?\nWill you use Euler-Cromer or RK4 through odeint()?\nIs the simulation mainly in outer space (no air drag), or does it include the Earth’s atmosphere?\n\nYou could compare the Earth’s atmosphere versus Mars’ atmosphere for example. It is time to write the explicit ODE, generate a model (what to include and what to keep constant?)"
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "",
+    "text": "This project models an Earth-to-Mars Hohmann transfer using a continuous trans-Mars injection (TMI) burn instead of an idealized instantaneous Hohmann impulse.\nDuring the gradual buildup of velocity, Earth’s and the Sun’s gravity continuously act on the spacecraft, warping its trajectory away from the simple analytical ellipse predicted by an ideal impulse. These overlapping gravitational and thrust effects make the motion impossible to solve analytically, requiring step-by-step numerical integration.\nThis simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory. This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory."
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#summary",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#summary",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "",
+    "text": "This project models an Earth-to-Mars Hohmann transfer using a continuous trans-Mars injection (TMI) burn instead of an idealized instantaneous Hohmann impulse.\nDuring the gradual buildup of velocity, Earth’s and the Sun’s gravity continuously act on the spacecraft, warping its trajectory away from the simple analytical ellipse predicted by an ideal impulse. These overlapping gravitational and thrust effects make the motion impossible to solve analytically, requiring step-by-step numerical integration.\nThis simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory. This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory."
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#motivationbackgroundquestion",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#motivationbackgroundquestion",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "Motivation/Background/Question",
+    "text": "Motivation/Background/Question\nThe traditional Hohmann transfer is an idealistic method to plan trajectories for a spacecraft to move from one orbit to another, assuming idealistic and instantaneous burns which simply cannot exist in reality. Spacecraft accelerate gradually over time while being acting upon the gravitation influences of nearby bodies, in our case being the Sun and Earth, in turn preventing the perfect elliptical trajectories predicted by Hohmann transfers.\nDuring a continuous burn, thrust is pushing in one direction while gravity from Earth and the Sun is pulling in another, these two forces act at the same time continuous along with the change in the spacecraft’s velocity, preventing a simple analytical solution.\nHohmann transfers are used in orbital dynamics to calculate the most fuel efficient setups (the lowest needed \\(\\Delta V\\)) to move between two orbits while also being more simple to calculate. In real Mars transfer missions, Hohmann transfers serve as a baseline to plan missions initially but must be built upon to account for gravity losses during finite burns, planer changes requiring more \\(\\Delta V\\) and margins of safety given the likelihood of delays or errors within burns.\nTo do this, we will have to numerically integrate the Spacecraft’s position and velocity over time."
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#results",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#results",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "Results",
+    "text": "Results\nFrom my research regarding the numerical approach for this problem the given spacecraft’s position “x”, velocity “v” and mass “m” evolve as such:\n\\(\\dot x = v\\)\n\\(\\dot v = -\\mu_\\odot \\frac{x}{x^3} + \\frac{T}{m}\\hat u\\)\n\\(\\dot{m} = -\\frac{T}{I_{sp} g_0}\\)\nT = Thrust, \\(\\hat u\\) is direction and \\(\\mu_\\odot\\) is the Sun’s gravitational parameter.\nAs seen, due to how m, v and \\(\\hat u\\) change over time, an analytical solution for x(t) and v(t) is not possible.\nTherefore I will be utalizing a numerical method called “Runge - Kutta” to calculate the trajectory for each step, more steps meaning the higher the resolution and more accurate my predicted path. This will at the end of the day help me achieve my actual goal of understanding how Thrust and gravitational forces on the spacecraft interact with each other through the burn, as well as help me understand the change in \\(\\Delta V\\) predicted by Hohmann as compared to integrating over time for a more accurate value."
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#summaryquestions",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#summaryquestions",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "Summary/Questions",
+    "text": "Summary/Questions\nThis project aims to answer how a continuous TMI burn changes a spacecraft’s trajectory compared to the ideal Hohmann transfer that assumes instantaneous burns. I expect to find that continuous thrust causes gravity losses, requiring slightly more \\(\\Delta V\\) and altering the transfer time. The simulation should show how the gradual acceleration bends the spacecraft’s path away from the perfect elliptical orbit predicted analytically.\nComparable data can be drawn from published Hohmann transfer values for Earth–Mars missions, which serve as a baseline for validating the analytical results. For the numeral analysis I will draw from the launch C3 of real mars missions via JPL’s public press kits, I’ll use the C3 to compute the impulsive TMI from parking orbit and then will compare that to my continuous burn results."
+  },
+  {
+    "objectID": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#comments",
+    "href": "posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html#comments",
+    "title": "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn",
+    "section": "Comments",
+    "text": "Comments\nAs far as I understand, the Hohmann transfer yields analytical ellipses as the result. It means that it has a closed-form analytical solution.\nFor a numerical solution; we would need further changes, such as perturbations of some kind, etc. what kind of perturbation or realistic scenario would you include? The argument here is that including \\(\\hat{u}\\) will just do that. What is the time dependence of this unit vector?\n\nAre the equations that were listed in one-dimension? is \\(\\hat{u}\\) just the direction + or - or are these equations on a plane in two dimensions? Could you write out the equations in vector form or a form that can be implemented into odeint().\nWhat is the sun’s gravitational parameter?\nWhat kind of data is available from JPL?"
+  },
+  {
+    "objectID": "posts/submissions/ortegasaid_159820_27014827_Project Proposal.html",
+    "href": "posts/submissions/ortegasaid_159820_27014827_Project Proposal.html",
+    "title": "Modeling and Visualizing a Binary Black Hole Chirp",
+    "section": "",
+    "text": "In this project I will attempt to simulate a gravitational wave chirp signal which is produced by two merging black holes. I can compare it to data from LIGOs detections to see how close my simulation is. Using NumPy, SciPy, and Matplotlib, I will model the inspiral phase using a Newtonian model with gravitational wave energy loss. I want to visualize the resulting waveform, spectrogram, and orbital motion.\nGravitational waves come from accelerating massive bodies, the binary black holes produce very strong and measurable signals. As they lose energy to radiation their orbits tighten and frequency increases creating the chirp. Because the system evolves nonlinearly I will need numerical integration to generate the waveform to compare with real data.\nMy expected results would include the simulated chirp waveform that increases in both amplitude and frequency also a spectrogram showing the time frequency evolution. And an orbital animation of the merging system to visualize what is happening.\nMy main question is “Can a simplified model produce the features of a real binary black hole chirp?” I expect the data to match somewhat, and there is comparable data available."
+  },
+  {
+    "objectID": "posts/submissions/ortegasaid_159820_27014827_Project Proposal.html#comments",
+    "href": "posts/submissions/ortegasaid_159820_27014827_Project Proposal.html#comments",
+    "title": "Modeling and Visualizing a Binary Black Hole Chirp",
+    "section": "Comments",
+    "text": "Comments\nDo you start with point sources? There is a lot of data for this kind of problem available.\n\nWhat starting conditions will you use? What are the initial masses? What are the quantities that you will be using? Can you make them dimensionless for the computation?\nWhat is the initial separation distance?\n\nThe challenge is to implement the energy loss model. Much of that work is though analytical, not numerical. What is the numerical work that you can do?\nAre you using Newtonian gravity?\nWill you animate the result?\nWhat data from LIGO can you use for the comparison?"
+  },
+  {
+    "objectID": "posts/submissions/grajeda.html",
+    "href": "posts/submissions/grajeda.html",
+    "title": "The 3 body problem",
+    "section": "",
+    "text": "The 3 body problem takes real data, our orbital diagram of the known solar system, and applies a hypothetical question, what would our Earth look like with 3 masses orbiting Earth itself?\nMy motivation itself came from one of my favorite book series The 3 body problem. It takes this idea and explores what different ‘Earths’ would look like, not just in the broader sense, but looks at the climate, what would be considered normal? How would the Sun rise and set? This is my main source of inspiration. While orbits of the solar system has been studied since man first looked up, it was always us orbiting something else, well except for that hiccup in the old times, I am looking at you Eudoxus and Ptolmey with your geocentic theory. Well, I wanted to take what we know about our heliocentric solar system and see what it would take for 3 masses, including the moon, and how it would effect the Earth. Effect the Earth in the way of could it be feasible, how large would the masses have to be, or small, to keep a habital condition here on Earth. This would require a computational approach in more ways then one. It would take the basis of what we know about Newtonian mechanics, which we CAN solve analytically. This idea becomes interesting by that special component of adding a third body, this then turns our approach into a ‘coupled nonlinear differential equation’, which I am currently learning about in my numerical analysis class. Initial conditions would lead to chaotic behavior, and an analytical approach would simply, not be able to keep up.\nThis would require pulling my skill sets from past and present classes, including but not limited to; Computational Physics, Analytic Mechanics, Numerical Analysics, Differentional Equations A & B and others. In the extremely basic expectation, I expect larger masses to completely destroy this model, my end result existing in an simulation where Earth would not be habital, gravitational forces itself would not make this possible. I expect possible smaller masses to potentially make this model possible, however how small would be the real finding. More digging would have to be done to see if there was comparable data out there, that would either lead me to believe my findings were heading in the right direction or not."
+  },
+  {
+    "objectID": "posts/submissions/grajeda.html#comments",
+    "href": "posts/submissions/grajeda.html#comments",
+    "title": "The 3 body problem",
+    "section": "Comments",
+    "text": "Comments\nGreat concept, the question and scope needs to be sharpened at this moment. For example, what is “habitability”? Is that defined by temperature, distance, etc? What masses, initial positions and velocities will be probed. The phase space can get very large, since we have 3 bodies, it means 9 starting positions (assuming planets are in one plane). Maybe keep 1 body constant.\nWhat is stability? Sometimes it may orbit a few times, then a planet will go off. Sometimes, numerical precision limits the orbit.\nStart with a simple system, using realistic parameters, make sure that your numbers are not too small or too large.\nUse energy conservation to make sure that your computation is not running afoul of basic laws. (Issue with the Euler method).\nBest would be to change one parameter at a time, so need to choose which one? Starting position of the moon?"
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html",
+    "href": "posts/submissions/figueroa.html",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "",
+    "text": "A Dielectric Barrier Discharge (DBD) plasma actuator operates by applying a high-voltage, high-frequency AC signal across two electrodes separated by a dielectric barrier. When the applied voltage reaches the breakdown threshold of air, a localized, non-thermal plasma is generated. The actuator’s asymmetric electrode configuration—one exposed and one buried—produces a net electrohydrodynamic (EHD) body force directed along the surface from the exposed electrode. Because the discharge is non-thermal, DBD actuators are energy-efficient and can safely operate at atmospheric pressure, making them attractive for flow control, propulsion, and surface treatment applications. However, in practical configurations, nearby conductive surfaces can alter the electric field distribution, charge accumulation, and resulting plasma behavior. To better understand these effects, this study employs numerical simulations to vary both the dielectric thickness and the size of the surrounding conductive box. The results will quantify how these parameters influence charge density, electric field strength, potential distribution, and overall actuator performance. In particular, increasing box size will help determine the distance at which conductive boundaries cease to affect the plasma region, while varying dielectric thickness will reveal trade-offs between breakdown voltage, power deposition, and plasma uniformity. The expected outcome is that thicker dielectrics reduce electric field intensity and plasma strength, while sufficiently large enclosures produce negligible influence beyond a critical dimension."
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html#summary-paragraph",
+    "href": "posts/submissions/figueroa.html#summary-paragraph",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "",
+    "text": "A Dielectric Barrier Discharge (DBD) plasma actuator operates by applying a high-voltage, high-frequency AC signal across two electrodes separated by a dielectric barrier. When the applied voltage reaches the breakdown threshold of air, a localized, non-thermal plasma is generated. The actuator’s asymmetric electrode configuration—one exposed and one buried—produces a net electrohydrodynamic (EHD) body force directed along the surface from the exposed electrode. Because the discharge is non-thermal, DBD actuators are energy-efficient and can safely operate at atmospheric pressure, making them attractive for flow control, propulsion, and surface treatment applications. However, in practical configurations, nearby conductive surfaces can alter the electric field distribution, charge accumulation, and resulting plasma behavior. To better understand these effects, this study employs numerical simulations to vary both the dielectric thickness and the size of the surrounding conductive box. The results will quantify how these parameters influence charge density, electric field strength, potential distribution, and overall actuator performance. In particular, increasing box size will help determine the distance at which conductive boundaries cease to affect the plasma region, while varying dielectric thickness will reveal trade-offs between breakdown voltage, power deposition, and plasma uniformity. The expected outcome is that thicker dielectrics reduce electric field intensity and plasma strength, while sufficiently large enclosures produce negligible influence beyond a critical dimension."
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html#motivation-background-question",
+    "href": "posts/submissions/figueroa.html#motivation-background-question",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "Motivation / Background / Question",
+    "text": "Motivation / Background / Question\n\nA DBD (dielectric barrier discharge) plasma actuator operates by applying a high-voltage, high-frequency AC signal across two electrodes separated by a dielectric barrier. The voltage reaches the breakdown threshold of air, partially ionizing it and creating a local cold (non-thermal) plasma. One electrode is exposed to the air while the other is embedded beneath the dielectric; this geometric asymmetry generates a net electrohydrodynamic (EHD) body force directed outward along the surface from the exposed electrode.\nBecause the discharge is non-thermal, DBD actuators are energy-efficient and can operate safely at atmospheric pressure. Their combination of ionic wind generation and reactive plasma chemistry enables applications across multiple domains.\nIn practice, plasma actuators are often enclosed or positioned near conductive surfaces, which can influence the electric field distribution, charge accumulation, and consequently the induced body force. Understanding how dielectric thickness and conductive enclosure size affect plasma generation and actuator efficiency is difficult to isolate experimentally, making computational modeling a crucial approach."
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html#results",
+    "href": "posts/submissions/figueroa.html#results",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "Results:",
+    "text": "Results:\n\nThrough numerical simulations, the study will systematically vary the dielectric thickness and the size of the surrounding conductive box to evaluate their effects on plasma characteristics—such as charge density, electric field strength, and potential distribution. * Increasing the box size will help determine the spatial extent at which the enclosure no longer influences the plasma region, while dielectric thickness variations will reveal the trade-off between breakdown voltage, power deposition, and actuator efficiency.\nThese results require a computational approach because of the complex coupling between electrostatics, plasma chemistry, and geometry-dependent boundary conditions that are not easily captured analytically."
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html#summary-questions",
+    "href": "posts/submissions/figueroa.html#summary-questions",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "Summary / Questions",
+    "text": "Summary / Questions\n\nThis work aims to answer: How does dielectric thickness influence the plasma strength and uniformity of a DBD actuator? and At what enclosure size does the conductive boundary cease to affect plasma performance?\nThe expected outcome is that thicker dielectrics will reduce electric field strength and thus lower plasma intensity, while sufficiently large conductive boxes will have negligible influence beyond a critical dimension."
+  },
+  {
+    "objectID": "posts/submissions/figueroa.html#comments",
+    "href": "posts/submissions/figueroa.html#comments",
+    "title": "Dielectric Variations of a DBD Plasma Actuator in a Conductive Box",
+    "section": "Comments",
+    "text": "Comments\nThe full model might be quite complex, so will be best to focus on a particular aspect; also keep in mind that this has to be explained to an audience in a brief amount of time. It is suitable for numerical computation.\n\nwhat would a schematic of this look like with all the parameters that are being used?\nare you including the dispersion of the dielectric \\(\\epsilon\\)?\nwhat is the exact geometry? Is this a 2D cut along the z-direction and x-direction, or do you include more dimensions?\nwhat are the important parameters and how are they chosen?\nwhat are the boundary conditions in this problem?\nhow is the breakdown threshold of air determined or implemented?\nhow can the problem be simplified further to make it more fitting for the class, distill the basics, and focus on the educational portion rather than the research portion?"
+  },
+  {
+    "objectID": "posts/submissions/trieumailey_57877_27030086_project proposal.html",
+    "href": "posts/submissions/trieumailey_57877_27030086_project proposal.html",
+    "title": "Heat Transfer in Tube Furnace for Semiconductors",
+    "section": "",
+    "text": "The objective of the project is to determine the temperature profile laterally along a cylindrical tube furnace when specific parameters for conduction and radiation are given. There is an existing paper on this heat transfer model with plotted lateral temperature profiles that can used to reference for verification and validation. To simplify this to be easier to compute, there will be specific parameters defined for the dimensions of the tube furnace. There will also be some boundary conditions in place to make the temperature profile match more closely to the paper’s temperature plot such as having the walls (at a certain distance x and radius r) having a hotter temperature and the top and bottom surfaces of the tube furnace to be cooler. This way, the middle furnace section should be displayed as the hottest and the rest of the furnace would cool in a symmetric manner. With those parameters in mind, plotting the lateral temperature profile should fall into place as long as the correct numerical methods are chosen for the heat transfer (the paper mentions using trapezoidal rule).\nThis model and problem is meant to demonstrate the proper temperature that’s suitable for semiconductor crystal growth. The computational component comes from implementing the equations for conduction and radiation from the paper and plotting the temperature versus the lateral length of the tube furnace as distance x. It’s computational in how heat transfer is a partial differential equation type of phenomenon, which calls for iterative and numerical methods. This is particularly appealing to me because I am more used to seeing this problem through an engineering lens but hopefully with this physics project, I can gain more understanding to modelling this problem, as this is based off a real task that an established semiconductor fabrication company is undertaking.\nThe expected results should be some sort of temperature plot of the lateral temperature profile of the tube furnace. The total heat flux can be calculated from a differential equation on conduction that may be combined with a specific radiation equation. Please note that there may be some minor changes to simplify the model to be more doable. There is an equation to be looked at in the research paper being referenced for this design project but there is another conduction equation to be considered in the class textbook in chapter 14.\nThe question to be answered is what is the lateral temperature profile of the tube furnace based on the given parameters for conduction and radiation heat transfer involved. There is in fact comparable data that can be referenced from this paper on “Modelling Temperature Distribution in Cylindrical Crystal Growth Furnaces”. The data to be used in comparison is the middle curve in Figure 2a, where the chosen heat flux is \\(q = 0.1431 W/cm^2\\). In section a of Figure 2, the chosen dimensions of the tube furnace was \\(L = 20 cm\\) and \\(D = 2.5 cm\\). It’s to be expected that the middle section of the tube furnace be the hottest and the bottom and top ends as the coldest, making a parabolic shape as the temperature profile."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html",
+    "title": "Fractal Gravity",
+    "section": "",
+    "text": "This project aims to simulate the gravitational field that would arise if one assigns mass to the components of a fractal set. To accomplish this, the dimension of the fractal must be finite, thus the perimeter of the fractal must be approximated with a finite number of interactions. Either a Koch Snowflake, the Mandelbrot set, the Julia set, or the Burning Ship fractals will be used as the set. The gravitational field must be assigned based on a fractal density function that will be influenced by the chosen resolution of the fractal’s perimeter. An arbitrarily scaled mass is assigned to each point in the set, then the density function is applied, then the resulting gravitational field is calculated.\nIf time permits, the behavior of a point particle within the vicinity of the set will be investigated and used to drive a subsidiary fractal. Each point in the finite perimeter is assigned a ‘color’ varying from each end of the visual spectrum. The path of the particle subject to the graviational field will be calculated for varying initial position and velocities, indexed by some \\(i,j\\). Iterating thrugh this process, the first point at which the particle’s position is equal to a point in the set, the color of this point will be assigned to that specific \\(i,j\\). Next, all points \\(i,j\\) will be plotted on a phase space plot of \\(i\\) vs \\(j\\) with their assigned color. Depending on the behavior of the fractal’s gravitational field, this phase space plot my resemble ‘fractal’ like patterns."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#summary",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#summary",
+    "title": "Fractal Gravity",
+    "section": "",
+    "text": "This project aims to simulate the gravitational field that would arise if one assigns mass to the components of a fractal set. To accomplish this, the dimension of the fractal must be finite, thus the perimeter of the fractal must be approximated with a finite number of interactions. Either a Koch Snowflake, the Mandelbrot set, the Julia set, or the Burning Ship fractals will be used as the set. The gravitational field must be assigned based on a fractal density function that will be influenced by the chosen resolution of the fractal’s perimeter. An arbitrarily scaled mass is assigned to each point in the set, then the density function is applied, then the resulting gravitational field is calculated.\nIf time permits, the behavior of a point particle within the vicinity of the set will be investigated and used to drive a subsidiary fractal. Each point in the finite perimeter is assigned a ‘color’ varying from each end of the visual spectrum. The path of the particle subject to the graviational field will be calculated for varying initial position and velocities, indexed by some \\(i,j\\). Iterating thrugh this process, the first point at which the particle’s position is equal to a point in the set, the color of this point will be assigned to that specific \\(i,j\\). Next, all points \\(i,j\\) will be plotted on a phase space plot of \\(i\\) vs \\(j\\) with their assigned color. Depending on the behavior of the fractal’s gravitational field, this phase space plot my resemble ‘fractal’ like patterns."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#motivation-background-question",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#motivation-background-question",
+    "title": "Fractal Gravity",
+    "section": "Motivation / Background / Question",
+    "text": "Motivation / Background / Question\nFractal billiards is the most closely related field of study. Typically perfeclty elastic particles (billiards) are placed within a fractal, treating the points along it’s boundary as a rigid barrier. Assigning the billiards some mass, initial position, and initial speed, their kinematics are analyzed for patterns. As far as I am aware, no study has assigned the fractal itself a mass. I believe it may be interesting to see what kind of gravitational field arises from the fractal’s underlying pattern. It could be a trivial one, with the ‘center of mass’ as the center of a radial field, however when accounting for the varying density of a fractal set, I believe the resulting field could be non-trivial and thus give rise to interesting dynamics.\nThe definition of a fractal requires that it be an infinitely complex and self similar pattern, meaning one may never calculate a fractal to it’s ‘full’ extent. This means computationally, the fractal must be approximated to some finite degree which introduces a need for numerical methods."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#results",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#results",
+    "title": "Fractal Gravity",
+    "section": "Results:",
+    "text": "Results:\nI intend to show the gravitational vector field that arises from the fractal. This must be calculated numerically as the fractal is being approximated to a finite degree and can no longer be treated analytically.\nIf time permits, I intend to create the phase space plot of the partile’s behavior as described above. This does pose a significant computational challenge as the resolution of the indexing for the position and velocity will weight heavily on computation time. The current structure of this approach essentially will require two embedded for loops for the indices, then a third embedded while loop for the path calculation. Depending on how computationally expensive this becomes, the approach may have to be reconfigured, or a degree of freedom may be removed (i.e. fixing initial speed)."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#questions",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#questions",
+    "title": "Fractal Gravity",
+    "section": "Questions",
+    "text": "Questions\nThis project aims to answer two main questions:\n\nDoes assigning mass to a fractal produce a nontrivial gravitational field?\nDo the kinematics of a point particle within the vicinity of a fractal with mass give rise to a subsidiary fractal?\n\nAs these questions have not yet been explored (as far as I am aware), data does not yet exist for the results of this project to be compared to. Somewhat similar procedures for calculating subsidiary fractals have been carried out for systems like the three body problem and a ball bouncing within a semi circle. In all known cases, however, the applied field was some analog of a radially inward gravitational field."
+  },
+  {
+    "objectID": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#comments",
+    "href": "posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html#comments",
+    "title": "Fractal Gravity",
+    "section": "Comments",
+    "text": "Comments\n\nWhich fractal will you use?\nHow is exactly is the fractal defined? Which one are you using, will you calculate the gravitational field on a 2D raster? Will you compare the fractal to a non-fractal, say a disk?\nHow large is your 2D grid?\nFor the computation it is best to do it in dimensionless units. You need some normalization or density without units. Therefore, define the gravitational interaction in terms of unitless parameters. Distance will then be measured as part of the grid.\nHow will you visualize your results? Contour plots?"
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "",
+    "text": "For methyl (1R,2R,3S,5S)-3- (benzoyloxy)-8-methyl-8-azabicyclo[3.2.1] octane-2-carboxylate"
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#summery",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#summery",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "Summery",
+    "text": "Summery\nWhether it’s caffeine or nicotine the body has a physiological response. I’m specifically interested in how neurons are affected. A very powerful stimulant is cocaine. In 2024 there were over 20k deaths due to a cocaine overdose. Thus, my goal is create a model/graph of how neuro frequency and communication strength is impacted when cocaine is present in the human body over time."
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#motivationbackgroundquestion",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#motivationbackgroundquestion",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "Motivation/Background/Question",
+    "text": "Motivation/Background/Question\n\nHow does stimulant use impact neuro frequency?\nWhat about synpatic strength-effects in the ability to communciate over time when stimulants are considered? How could it impact neuro communication speed?\n\nOne of the equations I plan in using is the following:\nHodgkin-Huxley model: \\[\nC_m \\frac{dV_m}{dt} = \\sum_I~k(t)+ I(t)\n\\tag{1}\\]\nThere are other studies that have used frequency for this specific stimulant can assist by furthering comprehension of cognitive function."
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#results",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#results",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "Results",
+    "text": "Results\nWhat will your outputs look like? Why is there a need for a numerical computation?"
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#summaryquestions",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#summaryquestions",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "Summary/Questions",
+    "text": "Summary/Questions\nMy goal is find out cocaine use impact neuro frequency. One of the expected outputs is increasing neuro frequency after cocaine use. Computational neuroscience is a growing field. I was able to find existing models for a neurons general behavior or with other uppers/downers."
+  },
+  {
+    "objectID": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#comments",
+    "href": "posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html#comments",
+    "title": "Frequency Analysis with Hodgkin-Huxley",
+    "section": "Comments",
+    "text": "Comments\n\nsimilar to a resistor network discussed in class.\nhow many “neurons” will you simulate?\ncan you define the specific parameters in Equation 1 and are you using matrices or is this an ODE?\n\nFor an ODE, you would have something like this:\n\\[\nC_m \\frac{dV_m}{dt} = aV_m\n\\]\nProject is good in principle, but the differential equation is not well defined and the specific conditions need to be setup first.\n\nWhat is the story that you would like to tell? Will you graph \\(V(t)\\) for how many neurons, what does it mean?\nWhat parameters are you using? Firing rate?\nCreate a block diagram of how the neurons are connected. How will you compute the frequencies? Is that necessary?"
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html",
+    "title": "Stellar Structure",
+    "section": "",
+    "text": "For my final project, I aim to investigate basic stellar structure by solving for the equations of state of a star and using the results to construct a synthetic Hertzsprung-Russell (HR) diagram. The composition of the star influences the macroscopic observables such as pressure, temperature and luminosity. Typically, hydrogen and helium dominate the composition of a star influencing its observables. The produced HR diagram will be explored by varying such conditions, specifically the mean molecular weight (\\(\\mu\\)) and stellar mass (\\(M\\)). The project will connect how these parameters influence the macroscopic stellar properties using numerical computation for the solutions of various (\\(\\mu\\)) and (\\(M\\))."
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#summary-paragraph",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#summary-paragraph",
+    "title": "Stellar Structure",
+    "section": "",
+    "text": "For my final project, I aim to investigate basic stellar structure by solving for the equations of state of a star and using the results to construct a synthetic Hertzsprung-Russell (HR) diagram. The composition of the star influences the macroscopic observables such as pressure, temperature and luminosity. Typically, hydrogen and helium dominate the composition of a star influencing its observables. The produced HR diagram will be explored by varying such conditions, specifically the mean molecular weight (\\(\\mu\\)) and stellar mass (\\(M\\)). The project will connect how these parameters influence the macroscopic stellar properties using numerical computation for the solutions of various (\\(\\mu\\)) and (\\(M\\))."
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#motivation-background-question",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#motivation-background-question",
+    "title": "Stellar Structure",
+    "section": "Motivation / Background / Question :",
+    "text": "Motivation / Background / Question :\nIn astrophysics, the equations of stellar strucutre consist of nonlinear coupled differential equations that cannot be solved analytically. \\[\\frac{dp}{dr} = \\frac{-Gm(r)\\rho(r)}{r^{2}} ,   \\frac{dL}{dr}  = 4\\pi r^{2} \\rho(r) \\epsilon(T,r), \\] \\[\\frac{dT}{dr} = \\frac{-3\\kappa_{\\lambda}\\rho(r)L(r)}{64\\pi r^{2} \\sigma \\ T^{3}(r)}, \\frac{dm}{dr} = 4\\pi r^{2} \\rho(r)\\] \\[ P = \\frac{\\rho \\kappa T}{\\mu m_{H}}\\] These equations describe hydrostatic equilibrium, mass continuity, luminosty and energy generation. The importance of such equations is to link thermodynamic quantities to the macroscopic observables such as luminosity, radius of the star, and surface temperature. Here, the mean molecular weight is a key parameter in the equation of state as it sets the conditions for the pressure and temperature required to support a given stellar mass. Changes in \\(\\mu\\) will alter \\(T(r),\\rho(r)\\), and \\(L(r)\\). Because of the nonlinear coupling of these equations, numerical integration is required to explore how stellar properties depend on their internal composition."
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#results",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#results",
+    "title": "Stellar Structure",
+    "section": "Results",
+    "text": "Results\nBy numerically integrating the stellar structure equations for stars of varying mass and mean molecular weight, I expect to produce a value for the density, temperaure, pressure and luminosity for each model. From this, I aim to plot a collection of synthetic data on the HR diagram. I anticipate that increasing \\(\\mu\\) at some fixed stellar mass will increase the central temperature and luminoisty, shifting stars upward on the HR diagram. Similary, increaing stellar mass I anticipate will produce hotter and more luminous stars, hence shifting the stars upward on the HR diagram as well. Numerical compuataion is essential for this project because of the coupled ODEs being nonlinear and dependent on both \\(\\mu\\) and \\(M\\), preventing me from solving these analytically."
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#summaryquestion",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#summaryquestion",
+    "title": "Stellar Structure",
+    "section": "Summary/Question",
+    "text": "Summary/Question\nThe central question guiding the project is: How do variations in stellar composition (\\(\\mu\\)) and stellar mass (\\(M\\)) affect the predicted properties and HR diagram position of stars? I expect to find that higher μ increases the central temperature, nuclear energy generation rate, and luminosity, producing shifts in the HR diagram. Increasing mass will have a similar effect, producing hotter, brighter stars. These synthetic results will be compared qualitatively with observed main-sequence stars and known empirical scaling laws, illustrating how the microscopic physics propagates to macroscopic observable star behavior."
+  },
+  {
+    "objectID": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#comments",
+    "href": "posts/submissions/alasjoseph_159794_27030314_Project Proposal.html#comments",
+    "title": "Stellar Structure",
+    "section": "Comments",
+    "text": "Comments\n\nDefine clearly all the variables; i.e. what is \\(L(r)\\), etc. what input parameters do you need? for example \\(\\kappa_{\\lambda}\\), etc.\nMake simplifications; emissivity = 1, etc.\nThe equations are coupled and have variables that range from small to large. Use dimensionless units as much as possible, so redefine the variables.\nuse odeint() and setup the equations well to solve\nprovide some test cases, what will happen \\(L \\approx m\\), etc.\nSimplify the problem to have a test case; i.e. first solve a simpler problem. What could that be?"
+  },
+  {
+    "objectID": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html",
+    "href": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html",
+    "title": "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect",
+    "section": "",
+    "text": "This project will simulate the flight of a tennis ball under physical forces, with primarily focusing on how the spin influences its trajectory. Through the use of computational physics, I will numerically integrate the equation of motion for the ball while accounting for air resistance, gravity and the Magnus force caused by the topspin or backspin of the ball. Specifically, the simulation will demonstrate time dependent trajectories for tennis balls with different initial speeds, spin rates and launch angles. I will then generate plots in order to show visualizations of these paths. This will be useful in being able to compare how spin affects range, height and curvature to show how professional tennis players utilize spin to control the landing of their shots in the court."
+  },
+  {
+    "objectID": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#summary",
+    "href": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#summary",
+    "title": "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect",
+    "section": "",
+    "text": "This project will simulate the flight of a tennis ball under physical forces, with primarily focusing on how the spin influences its trajectory. Through the use of computational physics, I will numerically integrate the equation of motion for the ball while accounting for air resistance, gravity and the Magnus force caused by the topspin or backspin of the ball. Specifically, the simulation will demonstrate time dependent trajectories for tennis balls with different initial speeds, spin rates and launch angles. I will then generate plots in order to show visualizations of these paths. This will be useful in being able to compare how spin affects range, height and curvature to show how professional tennis players utilize spin to control the landing of their shots in the court."
+  },
+  {
+    "objectID": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#motivation",
+    "href": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#motivation",
+    "title": "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect",
+    "section": "Motivation",
+    "text": "Motivation\nIt is commonly known by tennis players that topspin causes the ball to dip more quickly and land safely inside the court while backspin will likely keep the ball floating in the air and out of the court boundary. A computational approach is needed to integrate the equations of motion and demonstrate the movement of the tennis ball. The equations of motion with relation to drag and the Magnus force are complex and nonlinear. Through simulating the ball’s motion with numerical integration in python, I can analyze different parameters such as different spins, speed and angles to generate precise trajectories. This can possibly be done using Euler methods of integration.\n##Results\nThe computation will answer the questions about using different spin rates and how it changes it trajectory. Through numerically solving differential equations for position and velocity, I will be able to visualize and distinguish differences between topspin, backspin and no spin shots. The model will show how high the ball goes above a normal tennis net, how far it travels before landing and how quickly it curves downward. These results will consist of how air drag and gravity depend on velocity magnitude, range and direction. I expect the simulation to show that topspin creates an evidently faster downward curvature, while backspin creates a longer and slower path. The graphs that will be included will be trajectory vs time, landing position and velocity changes. These graphs will ultimately demonstrate the role of spin in shot control."
+  },
+  {
+    "objectID": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#summaryquestions",
+    "href": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#summaryquestions",
+    "title": "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect",
+    "section": "Summary/Questions",
+    "text": "Summary/Questions\nHow much earlier does a topspin shot dip toward the court compared to a flat shot and backspin shot?\nHow does the spin rate of a tennis ball influence its trajectory, in terms of range maximum height and curvature?\nHow do different spin rates affect landing position?\nFor a given initial speed and launch angle, how much does adding topspin or backspin change where the ball lands?\nI expect to find that topspin reduces the horizontal distance traveled and increases the downward acceleration, while backspin increases flight time and trajectory height. I will compare my simulated trajectories with online experimental data possibly from sports science research. This will prove if my model generates realistic trajectories and if landing spots are accurately predicted."
+  },
+  {
+    "objectID": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#comment",
+    "href": "posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html#comment",
+    "title": "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect",
+    "section": "Comment",
+    "text": "Comment\nThis is a good project that takes the trajectory and drag force to simulate tennis. The Magnus force is implemented from the rotation of the ball \\(\\omega\\) and the velocity \\(\\vec{v}\\).\n\\[\nm\\frac{d\\vec{x}^2}{dt^2} = \\vec{F}_{\\text{grav}} + \\vec{F}_{\\text{drag}} + S \\vec{\\omega} \\times \\vec{v}\n\\]\nOnce the initial conditions are given, this can be implemented and solved in different scenarios.\n\nYou can solve this for \\(S=0\\), no Magnus force, and then with \\(S&gt;0\\).\n\nYou can compute the trajectory, but also the horizontal range, the maximum height of the tennis ball and how long it takes. You can compare these values with the actual values and also graph them as a function of some initial condition (such as the initial speed)."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "",
+    "text": "I want this project to analyze past data of the weather to identify any long term changes in the weather by using some of the Python that was tough to us. I would be working with a dataset that has daily or monthly temperatures, I want to see which would give better results, the project will calculate the averages, anomalies, and the yearly changes to show any useful information. I will use line graphs and bar charts to help visualize how temperature has changed over time.Python provides efficient tools for organizing and processing large datasets, making it possible to uncover trends that would be difficult or impossible to observe manually."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#summary-of-project",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#summary-of-project",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "",
+    "text": "I want this project to analyze past data of the weather to identify any long term changes in the weather by using some of the Python that was tough to us. I would be working with a dataset that has daily or monthly temperatures, I want to see which would give better results, the project will calculate the averages, anomalies, and the yearly changes to show any useful information. I will use line graphs and bar charts to help visualize how temperature has changed over time.Python provides efficient tools for organizing and processing large datasets, making it possible to uncover trends that would be difficult or impossible to observe manually."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#motivation-background-question",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#motivation-background-question",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "Motivation/ Background/ Question",
+    "text": "Motivation/ Background/ Question\nUnderstanding long-term weather patterns is important for studying climate change, environmental planning, and seasonal behavior. Raw weather data often contains thousands of temperature measurements, which are too large and complex to analyze manually. Python and its data science libraries offer a computational approach that allows for efficient data cleaning, numerical computation, and visualization. This project is motivated by the question: What long-term temperature trends can be identified from historical weather data using computational methods? By using Python, we can transform raw numerical data into clear, interpretable insights."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#results",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#results",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "Results",
+    "text": "Results\nI think that the results of this project will produce summeries with number values and also graphs that will show temprature changes over the dataset’s timeframe. I also expect that the results will include the yearly average temperature, the hottest and coldest recorded values, and a graph of temperature anomalies showing deviations from the long-term mean. I believe that a numerrical omputation is essential for this project because it enables processing of large datasets, calculation of statistical values, and generation of visual trends that cannot be accurately obtained without automation and algorithmic analysis."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#summary-questions",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#summary-questions",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "Summary/ Questions",
+    "text": "Summary/ Questions\nI think the main question that I want the project to answer is: How have temperature patterns changed across the years represented in the dataset? . Another question that can be asked is Are average temperatures increasing or decreasing over time? Which years show the strongest anomalies? Are certain months or seasons contributing more to long-term trends? . The project is expected to reveal measurable temperature changes, such as gradual warming or increased seasonal variation. Comparable data exists from NOAA and other climate sources, allowing results to be contextualized and validated against established climate trends."
+  },
+  {
+    "objectID": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#comments",
+    "href": "posts/submissions/hernandezab_123093_27015118_Project Proposal.html#comments",
+    "title": "Weather Data Analyzer: Looking at Climate Change Over Time",
+    "section": "Comments",
+    "text": "Comments\nInteresting project, we need to focus this more and come up with a specific scenario to solve. For example, use the NOAA data on the CO2 concentration over time and model it with an equation that can be fit to the data.\nWhat do you mean with anomaly? How would you define that?\nMaybe use a data set and use smoothing or interpolation to find the mean temperatures, or fill in holes in the data. It would be best to start with a strong set of data that is available from NOAA."
+  },
+  {
+    "objectID": "posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html",
+    "href": "posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html",
+    "title": "Water Reservoir Levels in a Drought",
+    "section": "",
+    "text": "The project itself has two parts to the computational aspect when simulating the conditions of a drought. The first being that the amount of percipitation is defined and held constant for what would be considered as below average in the region. This region we wish to explore is the Oroville reservoir and the conversion from inches of rain into the water level unit of acre feet is found via getting the total catchment area and then multiply by the rainfall. Then from there, using one of the evaporation formulas, in this case, we plan on using the Dalton equation, we would choose what variable would be fluctuating to change the evaporation rate over a period of time. For example, using sympy, we would take the partial derivative in terms of humidity and then get the evaporation rates once setting the other variables constant and a changing humidity via an ODE equation. From there, we would get a list of evaporation results for the period of time we plan of calculating the period of the drought, in this case, 365 days with 365 evaporation results. After that, we would set the amount of water that the reservoir currently has at the start and set the constants. Then the formula of the Water Level = Amount Stored + Inflow - Outflow - Evaporation rates using all 365 days would be applied and finally graphed for the water level versus time. We could also get a graph of the evaporation rate per the changing variable.\nWhat is known in this field is the actual water levels that we can compare to for the span of time we wish to compare. The motivation behind doing this project is to see if we can predict the water levels in drought conditions as it is a very important issue that California faces. Due to wanting to see how the evaporation rate changes with respect to one changing variable, this approach requires a computational aspect.\nThe computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it.\nThe specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project"
+  },
+  {
+    "objectID": "posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html#comments",
+    "href": "posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html#comments",
+    "title": "Water Reservoir Levels in a Drought",
+    "section": "Comments",
+    "text": "Comments\n\nGiven it is a group project, what will the individual responsibilities be?\nWhat exactly is the Dalton equation?\nDoes the evaporation depend on the surface area? Does the area stay constant, or does it get smaller as the level of the lake drops?\nWhat is the shape of the ODE? What parameters will you include in the model? Something like:\n\n\\[\n\\frac{dw}{dt} = \\ldots\n\\]\nthen\n\\[\nw_{t+1} = w_t + \\ldots\n\\]\n\nIn order to make it comparable, use common units (meters, square meters, etc)."
+  },
+  {
+    "objectID": "posts/submissions/martinezcaleb_35825_27029667_Project.html",
+    "href": "posts/submissions/martinezcaleb_35825_27029667_Project.html",
+    "title": "Guitars Notes Clash",
+    "section": "",
+    "text": "This project will be programmed to figure out why playing random notes go together and other notes sound clashy. I will simulate the physics of a real guitar string to see that it does not vibrate perfectly which creates a change in the sound. Then I will use a mathematical model to calculate a dissonance score for different note combinations. As well, I will create a graph that will show which notes pairs will sound good or bad, showing the reason why when playing a guitar randomly around sounds like.\nWhen playing random guitar string notes, some notes will sounds good together. This is because the mathematical relationship between the sound waves and how our brains processes them. Simulating a vibrating string and analyzing dozens of overlapping sound frequencies for each pair of notes, and running million of calculation to apply the hearing model.\nMaking graphs with dissonance curves will show peaks for note combinations that predict sound to clash and valleys for those who are smooth. Which will be difficult to show with pen and paper.\nCan a computer model predict which intervals will sound consonant or dissonant? I expect to find that simple note pairs sound the best."
+  },
+  {
+    "objectID": "posts/submissions/martinezcaleb_35825_27029667_Project.html#guitars-notes-clash-or-smooth-sounds",
+    "href": "posts/submissions/martinezcaleb_35825_27029667_Project.html#guitars-notes-clash-or-smooth-sounds",
+    "title": "Guitars Notes Clash",
+    "section": "",
+    "text": "This project will be programmed to figure out why playing random notes go together and other notes sound clashy. I will simulate the physics of a real guitar string to see that it does not vibrate perfectly which creates a change in the sound. Then I will use a mathematical model to calculate a dissonance score for different note combinations. As well, I will create a graph that will show which notes pairs will sound good or bad, showing the reason why when playing a guitar randomly around sounds like.\nWhen playing random guitar string notes, some notes will sounds good together. This is because the mathematical relationship between the sound waves and how our brains processes them. Simulating a vibrating string and analyzing dozens of overlapping sound frequencies for each pair of notes, and running million of calculation to apply the hearing model.\nMaking graphs with dissonance curves will show peaks for note combinations that predict sound to clash and valleys for those who are smooth. Which will be difficult to show with pen and paper.\nCan a computer model predict which intervals will sound consonant or dissonant? I expect to find that simple note pairs sound the best."
+  },
+  {
+    "objectID": "posts/submissions/martinezcaleb_35825_27029667_Project.html#comments",
+    "href": "posts/submissions/martinezcaleb_35825_27029667_Project.html#comments",
+    "title": "Guitars Notes Clash",
+    "section": "Comments",
+    "text": "Comments\nWe need to simplify the physics a bit as this quickly gets challenging. Real guitars have a lot of nonlinear vibrations, but we could assume a simplified guitar acoustic scheme.\nYou could use PhyPhox app to record the audio and generate data for this project.\n\nHow do you define “clashy” exactly?\n\nThis might be an exploration of the Plomp-Levelt Tonal Consonance and Critical Bandwidth paper.\n\nHow will you present your results? What will you graph? Parameter vs. which parameter? Do you use a heatmap of note pairs for dissonance?\n\nFor simplication, consider choosing a small number of notes, then generate harmonics, use a model (Plomp-Levelt?) to compute the amount of dissonance. Compute all possible combinations and may disply the spectrum."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Final Projects Fall 2025",
+    "section": "",
+    "text": "Fractal Gravity\n\n\n\nODE\n\nfractal\n\ngravity\n\ngood\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nGavin\n\n\n\n\n\n\n\n\n\n\n\n\nHeat Transfer in Tube Furnace for Semiconductors\n\n\n\nPDE\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nMailey\n\n\n\n\n\n\n\n\n\n\n\n\nFrequency Analysis with Hodgkin-Huxley\n\n\n\nODE\n\nneuron\n\nmodel\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nAsh\n\n\n\n\n\n\n\n\n\n\n\n\nDielectric Variations of a DBD Plasma Actuator in a Conductive Box\n\n\n\ndielectric\n\nplasma\n\nchallenging\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nMatthew F\n\n\n\n\n\n\n\n\n\n\n\n\nStellar Structure\n\n\n\nODE\n\ngravity\n\ngood\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nJoseph\n\n\n\n\n\n\n\n\n\n\n\n\nThe 3 body problem\n\n\n\nchallenging\n\nsimulation\n\ngravity\n\ngroup project\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nVictoria G and Ivy\n\n\n\n\n\n\n\n\n\n\n\n\nModeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect\n\n\n\ngood\n\ntrajectory\n\nODE\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nMatthew Q\n\n\n\n\n\n\n\n\n\n\n\n\nModeling and Visualizing a Binary Black Hole Chirp\n\n\n\ngravity\n\ngood\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nSaid\n\n\n\n\n\n\n\n\n\n\n\n\nWeather Data Analyzer: Looking at Climate Change Over Time\n\n\n\nchallenging\n\ncurve fit\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nAB\n\n\n\n\n\n\n\n\n\n\n\n\nHohmann Transfer Visualization from Earth to Mars via Continous TMI Burn\n\n\n\nODE\n\ngravity\n\nmodel\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nChenchu\n\n\n\n\n\n\n\n\n\n\n\n\nWater Reservoir Levels in a Drought\n\n\n\nODE\n\ngroup project\n\ngood\n\nevaporation\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nDavie and Mingqi\n\n\n\n\n\n\n\n\n\n\n\n\nRocket Trajectory\n\n\n\nODE\n\ngood\n\ntrajectory\n\ngravity\n\nsimulation\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nVictoria E\n\n\n\n\n\n\n\n\n\n\n\n\nGuitars Notes Clash\n\n\n\nODE\n\nchallenging\n\nguitar\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nCaleb\n\n\n\n\n\n\n\n\n\n\n\n\nUsing the Fourier Transform to Filter Noise from an ECG Signal\n\n\n\nreferences\n\nFFT\n\ngood\n\n\n\n\n\n\n\n\n\nNov 24, 2025\n\n\nKristy\n\n\n\n\n\nNo matching items"
+  }
+]
