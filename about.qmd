@@ -1,0 +1,12 @@
+---
+title: "PHYS 360 - Computational Physics"
+image: book360_cover.png
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/thomasgredig
+---
+
+Any computational course is strongly coupled to practical examples with the end goal of tackling comprehensive research-related projects. The intermediate step to reach that goal is a culminating experience to use the skills from this computational course and apply them to solving an interesting problem in the given time frame. Therefore, the final project builds a bridge from course work to research work. It can deepen our physical understanding by exploring topics of interest in greater depth. Importantly, the final project provides an opportunity to collaborate, interact and communicate physics. The end product will be an oral presentation and a written report.

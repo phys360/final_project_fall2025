@@ -1,0 +1,72 @@
+---
+title: "Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn"
+author: "Chenchu"
+date: "2025-11-24"
+categories: [ODE, gravity, model]
+---
+
+## Summary
+
+This project models an Earth-to-Mars Hohmann transfer using a continuous trans-Mars injection (TMI) burn instead of an idealized instantaneous Hohmann impulse. 
+
+During the gradual buildup of velocity, Earth’s and the Sun’s gravity continuously act on the spacecraft, warping its trajectory away from the simple analytical ellipse predicted by an ideal impulse. 
+These overlapping gravitational and thrust effects make the motion impossible to solve analytically, requiring step-by-step numerical integration. 
+
+This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory.
+This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory.
+
+
+## Motivation/Background/Question
+
+The traditional Hohmann transfer is an idealistic method to plan trajectories for a spacecraft to move from one orbit to another, assuming idealistic and instantaneous burns which simply cannot exist in reality. 
+Spacecraft accelerate gradually over time while being acting upon the gravitation influences of nearby bodies, in our case being the Sun and Earth, in turn preventing the perfect elliptical trajectories predicted by Hohmann transfers. 
+
+During a continuous burn, thrust is pushing in one direction while gravity from Earth and the Sun is pulling in another, these two forces act at the same time continuous along with the change in the spacecraft's velocity, preventing a simple analytical solution. 
+
+Hohmann transfers are used in orbital dynamics to calculate the most fuel efficient setups (the lowest needed $\Delta V$) to move between two orbits while also being more simple to calculate. 
+In real Mars transfer missions, Hohmann transfers serve as a baseline to plan missions initially but must be built upon to account for gravity losses during finite burns, planer changes requiring more $\Delta V$ and margins of safety given the likelihood of delays or errors within burns. 
+
+To do this, we will have to numerically integrate the Spacecraft's position and velocity over time.
+
+
+## Results
+
+From my research regarding the numerical approach for this problem the given spacecraft's position "x", velocity "v" and mass "m" evolve as such:
+
+$\dot x = v$
+
+$\dot v = -\mu_\odot \frac{x}{x^3} + \frac{T}{m}\hat u$
+
+$\dot{m} = -\frac{T}{I_{sp} g_0}$
+
+T = Thrust, $\hat u$ is direction and $\mu_\odot$ is the Sun's gravitational parameter. 
+
+As seen, due to how m, v and $\hat u$ change over time, an analytical solution for x(t) and v(t) is not possible. 
+
+Therefore I will be utalizing a numerical method called "Runge - Kutta" to calculate the trajectory for each step, more steps meaning the higher the resolution and more accurate my predicted path. 
+This will at the end of the day help me achieve my actual goal of understanding how Thrust and gravitational forces on the spacecraft interact with each other through the burn,  as well as help me understand the change in $\Delta V$ predicted by Hohmann as compared to integrating over time for a more accurate value. 
+
+
+## Summary/Questions
+
+This project aims to answer how a continuous TMI burn changes a spacecraft’s trajectory compared to the ideal Hohmann transfer that assumes instantaneous burns. I expect to find that continuous thrust causes gravity losses, 
+requiring slightly more $\Delta V$ and altering the transfer time. 
+The simulation should show how the gradual acceleration bends the spacecraft’s path away from the perfect elliptical orbit predicted analytically. 
+
+Comparable data can be drawn from published Hohmann transfer values for Earth–Mars missions, which serve as a baseline for validating the analytical results. 
+For the numeral analysis I will draw from the launch C3 of real mars missions via JPL's public press kits, I'll use the C3 to compute the impulsive TMI from parking orbit and then will compare that to my continuous burn results.
+
+
+## Comments
+
+As far as I understand, the Hohmann transfer yields analytical ellipses as the result. It means that it has a closed-form analytical solution.
+
+For a numerical solution; we would need further changes, such as perturbations of some kind, etc. what kind of perturbation or realistic scenario would you include? The argument here is that including $\hat{u}$ will just do that. What is the time dependence of this unit vector? 
+
+- Are the equations that were listed in one-dimension? is $\hat{u}$ just the direction + or - or are these equations on a plane in two dimensions? Could you write out the equations in vector form or a form that can be implemented into `odeint()`. 
+
+- What is the sun's gravitational parameter?
+
+- What kind of data is available from JPL?
+
+

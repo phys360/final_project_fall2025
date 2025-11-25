@@ -1,0 +1,46 @@
+---
+title: "Fractal Gravity"
+author: "Gavin"
+date: "2025-11-24"
+categories: [ODE,fractal,gravity,good]
+image: https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif
+---
+
+## Summary
+
+This project aims to simulate the gravitational field that would arise if one assigns mass to the components of a fractal set. To accomplish this, the dimension of the fractal must be finite, thus the perimeter of the fractal must be approximated with a finite number of interactions. Either a [Koch Snowflake](https://en.wikipedia.org/wiki/Koch_snowflake), the Mandelbrot set, the Julia set, or the Burning Ship fractals will be used as the set. The gravitational field must be assigned based on a fractal density function that will be influenced by the chosen resolution of the fractal's perimeter. An arbitrarily scaled mass is assigned to each point in the set, then the density function is applied, then the resulting gravitational field is calculated. 
+
+If time permits, the behavior of a point particle within the vicinity of the set will be investigated and used to drive a subsidiary fractal. Each point in the finite perimeter is assigned a 'color' varying from each end of the visual spectrum. The path of the particle subject to the graviational field will be calculated for varying initial position and velocities, indexed by some $i,j$. Iterating thrugh this process, the first point at which the particle's position is equal to a point in the set, the color of this point will be assigned to that specific $i,j$. Next, all points $i,j$ will be plotted on a phase space plot of $i$ vs $j$ with their assigned color. Depending on the behavior of the fractal's gravitational field, this phase space plot my resemble 'fractal' like patterns. 
+    
+## Motivation / Background / Question
+
+[Fractal billiards](https://arxiv.org/abs/1210.0282) is the most closely related field of study. Typically perfeclty elastic particles (billiards) are placed within a fractal, treating the points along it's boundary as a rigid barrier. Assigning the billiards some mass, initial position, and initial speed, their kinematics are analyzed for patterns. As far as I am aware, no study has assigned the fractal *itself* a mass. I believe it may be interesting to see what kind of gravitational field arises from the fractal's underlying pattern. It could be a trivial one, with the 'center of mass' as the  center of a radial field, however when accounting for the varying density of a fractal set, I believe the resulting field could be non-trivial and thus give rise to interesting dynamics. 
+
+The definition of a fractal requires that it be an infinitely complex and self similar pattern, meaning one may never calculate a fractal to it's 'full' extent. This means computationally, the fractal must be approximated to some finite degree which introduces a need for numerical methods. 
+
+## Results:  
+
+I intend to show the gravitational vector field that arises from the fractal. This must be calculated numerically as the fractal is being approximated to a finite degree and can no longer be treated analytically. 
+
+If time permits, I intend to create the phase space plot of the partile's behavior as described above. This does pose a significant computational challenge as the resolution of the indexing for the position and velocity will weight heavily on computation time. The current structure of this approach essentially will require two embedded `for` loops for the indices, then a third embedded `while` loop for the path calculation. Depending on how computationally expensive this becomes, the approach may have to be reconfigured, or a degree of freedom may be removed (i.e. fixing initial speed). 
+
+## Questions
+
+This project aims to answer two main questions:
+
+- Does assigning mass to a fractal produce a nontrivial gravitational field?
+- Do the kinematics of a point particle within the vicinity of a fractal with mass give rise to a subsidiary fractal? 
+
+As these questions have not yet been explored (as far as I am aware), data does not yet exist for the results of this project to be compared to. Somewhat similar procedures for calculating subsidiary fractals have been carried out for systems like the three body problem and a ball bouncing within a semi circle. In all known cases, however, the applied field was some analog of a radially inward gravitational field. 
+
+## Comments
+
+- Which fractal will you use?
+
+- How is exactly is the fractal defined? Which one are you using, will you calculate the gravitational field on a 2D raster? Will you compare the fractal to a non-fractal, say a disk?
+
+- How large is your 2D grid?
+
+- For the computation it is best to do it in dimensionless units. You need some normalization or density without units. Therefore, define the gravitational interaction in terms of unitless parameters. Distance will then be measured as part of the grid.
+
+- How will you visualize your results? Contour plots?

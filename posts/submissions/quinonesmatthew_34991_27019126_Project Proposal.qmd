@@ -1,0 +1,46 @@
+---
+title: "Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect"
+author: "Matthew Q"
+date: "2025-11-24"
+categories: [good, trajectory, ODE]
+---
+
+## Summary 
+
+This project will simulate the flight of a tennis ball under physical forces, with primarily focusing on how the spin influences its trajectory. Through the use of computational physics, I will numerically integrate the equation of motion for the ball while accounting for air resistance, gravity and the Magnus force caused by the topspin or backspin of the ball. Specifically, the simulation will demonstrate time dependent trajectories for tennis balls with different initial speeds, spin rates and launch angles. I will then generate plots in order to show visualizations of these paths. This will be useful in being able to compare how spin affects range, height and curvature to show how professional tennis players utilize spin to control the landing of their shots in the court. 
+
+## Motivation 
+
+It is commonly known by tennis players that topspin causes the ball to dip more quickly and land safely inside the court while backspin will likely keep the ball floating in the air and out of the court boundary. A computational approach is needed to integrate the equations of motion and demonstrate the movement of the tennis ball. The equations of motion with relation to drag and the Magnus force are complex and nonlinear. Through simulating the ball's motion with numerical integration in python, I can analyze different parameters such as different spins, speed and angles to generate precise trajectories. This can possibly be done using Euler methods of integration.
+
+##Results
+
+The computation will answer the questions about using different spin rates and how it changes it trajectory. Through numerically solving differential equations for position and velocity, I will be able to visualize and distinguish differences between topspin, backspin and no spin shots. The model will show how high the ball goes above a normal tennis net, how far it travels before landing and how quickly it curves downward. These results will consist of how air drag and gravity depend on velocity magnitude, range and direction. I expect the simulation to show that topspin creates an evidently faster downward curvature, while backspin creates a longer and slower path. The graphs that will be included will be trajectory vs time, landing position and velocity changes. These graphs will ultimately demonstrate the role of spin in shot control.
+
+
+## Summary/Questions
+
+How much earlier does a topspin shot dip toward the court compared to a flat shot and backspin shot?
+
+How does the spin rate of a tennis ball influence its trajectory, in terms of range maximum height and curvature?
+
+How do different spin rates affect landing position?
+
+For a given initial speed and launch angle, how much does adding topspin or backspin change where the ball lands?
+
+I expect to find that topspin reduces the horizontal distance traveled and increases the downward acceleration, while backspin increases flight time and trajectory height. I will compare my simulated trajectories with online experimental data possibly from sports science research. This will prove if my model generates realistic trajectories and if landing spots are accurately predicted.
+
+## Comment
+
+This is a good project that takes the trajectory and drag force to simulate tennis. The Magnus force is implemented from the rotation of the ball $\omega$ and the velocity $\vec{v}$. 
+
+$$
+m\frac{d\vec{x}^2}{dt^2} = \vec{F}_{\text{grav}} + \vec{F}_{\text{drag}} + S \vec{\omega} \times \vec{v}
+$$
+
+Once the initial conditions are given, this can be implemented and solved in different scenarios.
+
+- You can solve this for $S=0$, no Magnus force, and then with $S>0$.
+
+You can compute the trajectory, but also the horizontal range, the maximum height of the tennis ball and how long it takes. You can compare these values with the actual values and also graph them as a function of some initial condition (such as the initial speed).
+

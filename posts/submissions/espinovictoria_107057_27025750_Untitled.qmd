@@ -1,0 +1,30 @@
+---
+title: "Rocket Trajectory"
+author: "Victoria E"
+date: "2025-11-24"
+categories: [ODE, good, trajectory, gravity, simulation]
+---
+
+Using Python I will explore the numerical simulation of a rockets trajectory. Because rocket motion involves nonlinear forces such as gravity, atmoshperic drag, and is time-dependent, using computational methods in python will make calculating a rockets motion much more simpler than trying to do so analytically. Numerical integration will allow me to show the rockets position, velocity and acceleration over time. By creating multiple situations I will be able to show the difference in accuracy and stability. 
+    
+A computational approach is required to model the forces acting on the rocket, integrate the equations of motion, and predict the trajectory with sufficient accuracy. Because rocket trajectory is very important in fields such as aerospace engineering and orbital mechanics there are many uses for these types of computations. 
+
+My results will include simulated altitude, velocity and acceleration over time with graphs. I will create scenarios to try to determine when more accurate numerical methods become necessary such as change in thrust or atmospheric drag. Possibly also using these methods to demonstrate rocket trajectory given different environments or on different planets. 
+
+I hope to be able to answer how accurately we can model a rockets flight using python. I also hope to be able to determine how sensitive trajectory predictions are. I will be able to compare my numerical results with actual rocket trajectory data. 
+
+## Comments
+
+A good project to reinforce the topics learned in this class. It is time to focus a bit more on a specific trajectory as everything together is quite complex.
+
+- Will you use a variable mass for the rocket (fuel burned)
+
+- Do you include the change in air density?
+
+- Is the thrust a constant, or time-dependent?
+
+- Will you use Euler-Cromer or RK4 through `odeint()`?
+
+- Is the simulation mainly in outer space (no air drag), or does it include the Earth's atmosphere?
+
+You could compare the Earth's atmosphere versus Mars' atmosphere for example. It is time to write the explicit ODE, generate a model (what to include and what to keep constant?)

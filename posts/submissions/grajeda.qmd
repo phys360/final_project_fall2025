@@ -1,0 +1,26 @@
+---
+title: "The 3 body problem"
+author: "Victoria G and Ivy"
+date: "2025-11-24"
+categories: [challenging, simulation, gravity, group project]
+image: https://upload.wikimedia.org/wikipedia/commons/0/0a/3_Body_Problem_title_card.png
+---
+
+The 3 body problem takes real data, our orbital diagram of the known solar system, and applies a hypothetical question, what would our Earth look like with 3 masses orbiting Earth itself? 
+
+My motivation itself came from one of my favorite book series [The 3 body problem](https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)). It takes this idea and explores what different 'Earths' would look like, not just in the broader sense, but looks at the climate, what would be considered normal? How would the Sun rise and set? This is my main source of inspiration. While orbits of the solar system has been studied since man first looked up, it was always us orbiting something else, well except for that hiccup in the old times, I am looking at you Eudoxus and Ptolmey with your geocentic theory. Well, I wanted to take what we know about our heliocentric solar system and see what it would take for 3 masses, including the moon, and how it would effect the Earth. Effect the Earth in the way of could it be feasible, how large would the masses have to be, or small, to keep a habital condition here on Earth. This would require a computational approach in more ways then one. It would take the basis of what we know about Newtonian mechanics, which we CAN solve analytically. This idea becomes interesting by that special component of adding a third body, this then turns our approach into a 'coupled nonlinear differential equation', which I am currently learning about in my numerical analysis class. Initial conditions would lead to chaotic behavior, and an analytical approach would simply, not be able to keep up. 
+
+This would require pulling my skill sets from past and present classes, including but not limited to; Computational Physics, Analytic Mechanics, Numerical Analysics, Differentional Equations A & B and others. In the extremely basic expectation, I expect larger masses to completely destroy this model, my end result existing in an simulation where Earth would not be habital, gravitational forces itself would not make this possible. I expect possible smaller masses to potentially make this model possible, however how small would be the real finding. More digging would have to be done to see if there was comparable data out there, that would either lead me to believe my findings were heading in the right direction or not.
+
+
+## Comments
+
+Great concept, the question and scope needs to be sharpened at this moment. For example, what is "habitability"? Is that defined by temperature, distance, etc? What masses, initial positions and velocities will be probed. The phase space can get very large, since we have 3 bodies, it means 9 starting positions (assuming planets are in one plane). Maybe keep 1 body constant.
+
+What is stability? Sometimes it may orbit a few times, then a planet will go off. Sometimes, numerical precision limits the orbit. 
+
+Start with a simple system, using realistic parameters, make sure that your numbers are not too small or too large.
+
+Use energy conservation to make sure that your computation is not running afoul of basic laws. (Issue with the Euler method).
+
+Best would be to change one parameter at a time, so need to choose which one? Starting position of the moon?

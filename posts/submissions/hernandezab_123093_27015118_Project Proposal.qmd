@@ -1,0 +1,30 @@
+---
+title: "Weather Data Analyzer: Looking at Climate Change Over Time"
+author: "AB"
+date: "2025-11-24"
+categories: [challenging, curve fit]
+---
+
+## Summary of Project 
+
+I want this project to analyze past data of the weather to identify any long term changes in the weather by using some of the Python that was tough to us. I would be working with a dataset that has daily or monthly temperatures, I want to see which would give better results, the project will calculate the averages, anomalies, and the yearly changes to show any useful information. I will use line graphs and bar charts to help visualize how temperature has changed over time.Python provides efficient tools for organizing and processing large datasets, making it possible to uncover trends that would be difficult or impossible to observe manually.
+
+## Motivation/ Background/ Question
+
+Understanding long-term weather patterns is important for studying climate change, environmental planning, and seasonal behavior. Raw weather data often contains thousands of temperature measurements, which are too large and complex to analyze manually. Python and its data science libraries offer a computational approach that allows for efficient data cleaning, numerical computation, and visualization. This project is motivated by the question:  What long-term temperature trends can be identified from historical weather data using computational methods? By using Python, we can transform raw numerical data into clear, interpretable insights.
+    
+## Results 
+
+I think that the results of this project will produce summeries with number values and also graphs that will show temprature changes over the dataset's timeframe. I also expect that the results will include the yearly average temperature, the hottest and coldest recorded values, and a graph of temperature anomalies showing deviations from the long-term mean. I believe that a numerrical omputation is essential for this project because it enables processing of large datasets, calculation of statistical values, and generation of visual trends that cannot be accurately obtained without automation and algorithmic analysis.
+
+## Summary/ Questions
+
+I think the main question that I want the project to answer is:  How have temperature patterns changed across the years represented in the dataset? . Another question that can be asked is  Are average temperatures increasing or decreasing over time? Which years show the strongest anomalies? Are certain months or seasons contributing more to long-term trends? . The project is expected to reveal measurable temperature changes, such as gradual warming or increased seasonal variation. Comparable data exists from NOAA and other climate sources, allowing results to be contextualized and validated against established climate trends.
+
+## Comments
+
+Interesting project, we need to focus this more and come up with a specific scenario to solve. For example, use the NOAA data on the CO2 concentration over time and model it with an equation that can be fit to the data. 
+
+What do you mean with anomaly? How would you define that? 
+
+Maybe use a data set and use smoothing or interpolation to find the mean temperatures, or fill in holes in the data. It would be best to start with a strong set of data that is available from NOAA.

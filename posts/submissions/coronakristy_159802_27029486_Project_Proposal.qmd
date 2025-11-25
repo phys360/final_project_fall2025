@@ -1,0 +1,51 @@
+---
+title: "Using the Fourier Transform to Filter Noise from an ECG Signal"
+author: "Kristy"
+date: "2025-11-24"
+categories: [references, FFT, good]
+---
+
+
+## Summary
+
+This project will use the Fourier transform to clean noise from an electrocardiogram (ECG) signal. ECG signals measure electrical activity of the heart, but in real life situations they often contain noise from breathing, electrical interference, and most of all movement. In this project I will generate a simple ECG-like signal, add artificial noise, and then use the Fourier transform to filter the noise. 
+
+## Background
+
+ECGs are one of the most used diagnostic tools in medicine. Proper preparations aim to limit noise but the raw signal almost always contains some unwanted noise. According to a technical guide from GE HealthCare, this noise can come from fluorescent light, cell phoones, Bluetooth devices, or physical movement of a patient. A review by Luo & Johnston (2010) explains that ECG filtering is an essential preprocessing step. Noise can hide features like the P wave, QRS complex, and T wave. They also discuss how different types of noise require different filtering strategies, and how filtering must be done carefully to avoid the diagnostic information.  
+
+The Fourier transform is a common way to separate a signal into its frequency components. This can aid in removing noise such as 60 Hz power-line interference. Because an ECG consists of a lot of data points, and filtering involves modifying the whole frequency spectrum, a computational approach is a fitting practical method.
+
+## Results
+
+I expect to make several plots showing 3 things: a clean ECG-like signal, a noisy version after adding interference, the filtered signal after operating the Fourier transform.  
+Before filtering I expect to see a dominant frequency that simulates a heartbeat along with noise components. After filtering, the inverse Fourier transform should reconstruct it to look like the original clean signal.  
+
+A basic ECG waveform contains a big number of time points, and the Fourier transform formula alone requires combining every point using exponentials. Each component is computed using a sum over the entire signal, meaning lots of work. Also, the output of the transform should be interpreted visually and without a computer we cannot picture the signal by looking at numbers.
+
+## Summary/Questions
+
+The specific question this project aims to answer is:  
+
+- *"Can the Fourier transform effectively isolate and recover a heartbeat signal from noisy ECG data?"*  
+
+I expect the filtered signal to closely resemble the clean waveform before noise was added. Similar results are reported in ECG-filtering research like that of Luo & Johnston (2010), where frequency-based filtering is shown to be effective for removing power-line and baseline-wander noise. My project is a simplified version of these real-world techniques and demonstrates the use of computational tools in the medical field.
+
+### References
+
+- Luo,S., & Johnston, P. (2010). [*A review of electrocardiogram filtering.*](https://www.sciencedirect.com/science/article/pii/S0022073610002852) Journal of Electrocardiology, 43(6), 486-496. 
+- GE HealthCare. (2023) [*A guide to ECG signal filtering.*](https://www.gehealthcare.com/insights/article/a-guide-to-ecg-signal-filtering?srsltid=AfmBOork6ZPw8j9XWTgVs6Wi3bjLykvwIsrI1DnKOb52nDnRnSWohy-t)
+
+
+## Comments
+
+Good project with references and a clear question. The Fourier transform was not covered in the class, but `NumPy` provides Fourier transforms with [numpy.fft.fft()](https://numpy.org/doc/2.1/reference/routines.fft.html) The scope is reasonable and it uses numerical approaches (FFT).
+
+- You can use the phone's accelerator with the [PhyPhox app](https://phyphox.org/) to measure the heart rate.
+
+- It is possible to add random noise to your data and then apply your filtering methods
+
+- It is possible to compare data with real data from [Physionet](https://physionet.org/) or elsewhere.
+
+- Will you use a particular model? How noisy is too noisy? How will you create the noise in your data? Are you using real data?
+

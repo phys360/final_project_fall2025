@@ -1,0 +1,47 @@
+---
+title: "Stellar Structure"
+author: "Joseph"
+date: "2025-11-24"
+categories: [ODE,gravity, good]
+---
+
+
+## Summary Paragraph 
+
+For my final project, I aim to investigate basic stellar structure by solving for the equations of state of a star and using the results to construct a synthetic Hertzsprung-Russell (HR) diagram. The composition of the star influences the macroscopic observables such as pressure, temperature and luminosity. Typically, hydrogen and helium dominate the composition of a star influencing its observables. The produced HR diagram will be explored by varying such conditions, specifically the mean molecular weight ($\mu$) and stellar mass ($M$).  The project will connect how these parameters influence the macroscopic stellar properties using numerical computation for the solutions of various ($\mu$) and ($M$). 
+
+
+## Motivation / Background / Question : 
+In astrophysics, the equations of stellar strucutre consist of nonlinear coupled differential equations that cannot be solved analytically.
+$$\frac{dp}{dr} = \frac{-Gm(r)\rho(r)}{r^{2}} ,   \frac{dL}{dr}  = 4\pi r^{2} \rho(r) \epsilon(T,r), $$
+$$\frac{dT}{dr} = \frac{-3\kappa_{\lambda}\rho(r)L(r)}{64\pi r^{2} \sigma \ T^{3}(r)}, \frac{dm}{dr} = 4\pi r^{2} \rho(r)$$
+$$ P = \frac{\rho \kappa T}{\mu m_{H}}$$
+ These equations describe hydrostatic equilibrium, mass continuity, luminosty and energy generation. The importance of such equations is to link thermodynamic quantities to the macroscopic observables such as luminosity, radius of the star, and surface temperature. Here, the mean molecular weight is a key parameter in the equation of state as it sets the conditions for the  pressure and temperature required to support a given stellar mass. Changes in $\mu$ will alter $T(r),\rho(r)$, and $L(r)$. Because of the nonlinear coupling of these equations, numerical integration is required to explore how stellar properties depend on their internal composition.
+
+## Results 
+
+By numerically integrating the stellar structure equations for stars of varying mass and mean molecular weight, I expect to produce a value for the density, temperaure, pressure and luminosity for each model. From this, I aim to plot a collection of synthetic data on the HR diagram. I anticipate that increasing $\mu$ at some fixed stellar mass will increase the central temperature and luminoisty, shifting stars upward on the HR diagram. Similary, increaing stellar mass I anticipate will produce hotter and more luminous stars, hence shifting the stars upward on the HR diagram as well. Numerical compuataion is essential for this project because of the coupled ODEs being nonlinear and dependent on both $\mu$ and $M$, preventing me from solving these  analytically. 
+
+
+## Summary/Question 
+
+The central question guiding the project is: How do variations in stellar composition ($\mu$) and stellar mass ($M$) affect the predicted properties and HR diagram position of stars? I expect to find that higher μ increases the central temperature, nuclear energy generation rate, and luminosity, producing shifts in the HR diagram. Increasing mass will have a similar effect, producing hotter, brighter stars. These synthetic results will be compared qualitatively with observed main-sequence stars and known empirical scaling laws, illustrating how the microscopic physics propagates to macroscopic observable star behavior.
+
+## Comments
+
+- Define clearly all the variables; i.e. what is $L(r)$, etc. what input parameters do you need? for example $\kappa_{\lambda}$, etc. 
+
+- Make simplifications; emissivity = 1, etc.
+
+- The equations are coupled and have variables that range from small to large. Use dimensionless units as much as possible, so redefine the variables.
+
+- use `odeint()` and setup the equations well to solve
+
+- provide some test cases, what will happen $L \approx m$, etc. 
+
+- Simplify the problem to have a test case; i.e. first solve a simpler problem. What could that be? 
+
+
+
+
+

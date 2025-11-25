@@ -1,0 +1,32 @@
+---
+title: "Modeling and Visualizing a Binary Black Hole Chirp"
+author: "Said"
+date: "2025-11-24"
+categories: [gravity, good]
+image: https://upload.wikimedia.org/wikipedia/commons/d/d4/LIGO_schematic_%28multilang%29.svg
+---
+
+In this project I will attempt to simulate a gravitational wave chirp signal which is produced by two merging black holes. I can compare it to data from LIGOs detections to see how close my simulation is. Using NumPy, SciPy, and Matplotlib, I will model the inspiral phase using a Newtonian model with gravitational wave energy loss. I want to visualize the resulting waveform, spectrogram, and orbital motion.
+
+Gravitational waves come from accelerating massive bodies, the binary black holes produce very strong and measurable signals. As they lose energy to radiation their orbits tighten and frequency increases creating the chirp. Because the system evolves nonlinearly I will need numerical integration to generate the waveform to compare with real data.
+
+My expected results would include the simulated chirp waveform that increases in both amplitude and frequency also a spectrogram showing the time frequency evolution. And an orbital animation of the merging system to visualize what is happening. 
+
+My main question is "Can a simplified model produce the features of a real binary black hole chirp?" I expect the data to match somewhat, and there is comparable data available.
+
+## Comments
+
+Do you start with point sources? There is a lot of data for this kind of problem available. 
+
+- What starting conditions will you use? What are the initial masses? What are the quantities that you will be using? Can you make them dimensionless for the computation?
+
+- What is the initial separation distance?
+
+The challenge is to implement the energy loss model. Much of that work is though analytical, not numerical. What is the numerical work that you can do?
+
+Are you using Newtonian gravity?
+
+Will you animate the result?
+
+What data from LIGO can you use for the comparison?
+

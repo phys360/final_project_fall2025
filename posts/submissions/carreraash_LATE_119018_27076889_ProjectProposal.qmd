@@ -1,0 +1,56 @@
+---
+title: "Frequency Analysis with Hodgkin-Huxley"
+author: "Ash"
+date: "2025-11-24"
+categories: [ODE,neuron,model]
+---
+
+
+For methyl (1R,2R,3S,5S)-3- (benzoyloxy)-8-methyl-8-azabicyclo[3.2.1] octane-2-carboxylate
+
+
+##  Summery
+
+Whether it's caffeine or nicotine the body has a physiological response. I'm specifically interested in how neurons are affected. A very powerful stimulant is cocaine. In 2024 there were over 20k deaths due to a cocaine overdose. Thus, my goal is create a model/graph of how neuro frequency and communication strength is impacted when cocaine is present in the human body over time. 
+
+
+## Motivation/Background/Question
+
+- How does stimulant use impact neuro frequency?
+- What about synpatic strength-effects in the ability to communciate over time when stimulants are considered? How could it impact neuro communication speed?
+
+One of the equations I plan in using is the following:
+
+[Hodgkin-Huxley model](https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model):
+$$
+C_m \frac{dV_m}{dt} = \sum_I~k(t)+ I(t)
+$$ {#eq-huxley}
+
+There are other studies that have used frequency for this specific stimulant can assist by furthering comprehension of cognitive function.
+
+    
+## Results
+What will your outputs look like? Why is there a need for a numerical computation? 
+
+## Summary/Questions
+My goal is find out cocaine use impact neuro frequency. One of the expected outputs is increasing neuro frequency after cocaine use. Computational neuroscience is a growing field. I was able to find existing models for a neurons general behavior or with other uppers/downers. 
+    
+## Comments
+
+- similar to a resistor network discussed in class.
+- how many "neurons" will you simulate? 
+- can you define the specific parameters in @eq-huxley and are you using matrices or is this an ODE?
+
+For an ODE, you would have something like this:
+
+$$
+C_m \frac{dV_m}{dt} = aV_m
+$$
+
+Project is good in principle, but the differential equation is not well defined and the specific conditions need to be setup first. 
+
+- What is the story that you would like to tell? Will you graph $V(t)$ for how many neurons, what does it mean?
+
+- What parameters are you using? Firing rate? 
+
+- Create a block diagram of how the neurons are connected. How will you compute the frequencies? Is that necessary?

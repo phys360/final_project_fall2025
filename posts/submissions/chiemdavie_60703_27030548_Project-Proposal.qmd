@@ -1,0 +1,38 @@
+---
+title: "Water Reservoir Levels in a Drought"
+author: "Davie and Mingqi"
+date: "2025-11-24"
+categories: [ODE, group project, good, evaporation]
+---
+
+
+The project itself has two parts to the computational aspect when simulating the conditions of a drought. The first being that the amount of percipitation is defined and held constant for what would be considered as below average in the region. This region we wish to explore is the Oroville reservoir and the conversion from inches of rain into the water level unit of acre feet is found via getting the total catchment area and then multiply by the rainfall. Then from there, using one of the evaporation formulas, in this case, we plan on using the [Dalton equation](https://www.ldeo.columbia.edu/~martins/hydro/homework/evaporation.html), we would choose what variable would be fluctuating to change the evaporation rate over a period of time. For example, using sympy, we would take the partial derivative in terms of humidity and then get the evaporation rates once setting the other variables constant and a changing humidity via an ODE equation. From there, we would get a list of evaporation results for the period of time we plan of calculating the period of the drought, in this case, 365 days with 365 evaporation results. After that, we would set the amount of water that the reservoir currently has at the start and set the constants. Then the formula of the Water Level = Amount Stored + Inflow - Outflow - Evaporation rates using all 365 days would be applied and finally graphed for the water level versus time. We could also get a graph of the evaporation rate per the changing variable. 
+
+What is known in this field is the actual water levels that we can compare to for the span of time we wish to compare. The motivation behind doing this project is to see if we can predict the water levels in drought conditions as it is a very important issue that California faces. Due to wanting to see how the evaporation rate changes with respect to one changing variable, this approach requires a computational aspect. 
+
+The computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it. 
+
+The specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project
+  
+
+## Comments
+
+- Given it is a group project, what will the individual responsibilities be?
+
+- What exactly is the *Dalton equation*?
+
+- Does the evaporation depend on the surface area? Does the area stay constant, or does it get smaller as the level of the lake drops?
+
+- What is the shape of the ODE? What parameters will you include in the model? Something like:
+
+$$
+\frac{dw}{dt} = \ldots
+$$
+
+then
+
+$$
+w_{t+1} = w_t + \ldots
+$$
+
+- In order to make it comparable, use common units (meters, square meters, etc). 

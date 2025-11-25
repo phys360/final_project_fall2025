@@ -1,0 +1,33 @@
+---
+title: "Guitars Notes Clash"
+author: "Caleb"
+date: "2025-11-24"
+categories: [ODE, challenging, guitar]
+---
+
+## Guitars Notes Clash or Smooth sounds 
+
+1.  This project will be programmed to figure out why playing random notes go together and other notes sound clashy. I will simulate the physics of a real guitar string to see that it does not vibrate perfectly which creates a change in the sound. Then I will use a mathematical model to calculate a dissonance score for different note combinations. As well, I will create a graph that will show which notes pairs will sound good or bad, showing the reason why when playing a guitar randomly around sounds like. 
+
+2. When playing random guitar string notes, some notes will sounds good together. This is because the mathematical relationship between the sound waves and how our brains processes them. Simulating a vibrating string and analyzing dozens of overlapping sound frequencies for each pair of notes, and running million of calculation to apply the hearing model. 
+
+3. Making graphs with dissonance curves will show peaks for note combinations that predict sound to clash and valleys for those who are smooth. Which will be difficult to show with pen and paper. 
+
+4. Can a computer model predict which intervals will sound consonant or dissonant? I expect to find that simple note pairs sound the best. 
+
+
+## Comments
+
+We need to simplify the physics a bit as this quickly gets challenging. Real guitars have a lot of nonlinear vibrations, but we could assume  a simplified guitar acoustic scheme.
+
+You could use [PhyPhox app](https://phyphox.org/) to record the audio and generate data for this project.
+
+- How do you define "clashy" exactly?
+
+This might be an exploration of the [Plomp-Levelt Tonal Consonance and Critical Bandwidth](https://www.math.miami.edu/~armstrong/592sp15/Plomp_Levelt_1965.pdf) paper. 
+
+- How will you present your results? What will you graph? Parameter vs. which parameter? Do you use a heatmap of note pairs for dissonance?
+
+For simplication, consider choosing a small number of notes, then generate harmonics, use a model (Plomp-Levelt?) to compute the amount of dissonance. Compute all possible combinations and may disply the spectrum.
+
+
