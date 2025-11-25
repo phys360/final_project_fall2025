@@ -12,9 +12,49 @@
 <generator>quarto-1.8.26</generator>
 <lastBuildDate>Mon, 24 Nov 2025 08:00:00 GMT</lastBuildDate>
 <item>
-  <title>Fractal Gravity</title>
-  <dc:creator>Gavin </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html</link>
+  <title>Water Reservoir Levels in a Drought</title>
+  <dc:creator>Davie and Mingqi</dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/davie.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The project itself has two parts to the computational aspect when simulating the conditions of a drought. The first being that the amount of percipitation is defined and held constant for what would be considered as below average in the region. This region we wish to explore is the Oroville reservoir and the conversion from inches of rain into the water level unit of acre feet is found via getting the total catchment area and then multiply by the rainfall. Then from there, using one of the evaporation formulas, in this case, we plan on using the <a href="https://www.ldeo.columbia.edu/~martins/hydro/homework/evaporation.html">Dalton equation</a>, we would choose what variable would be fluctuating to change the evaporation rate over a period of time. For example, using sympy, we would take the partial derivative in terms of humidity and then get the evaporation rates once setting the other variables constant and a changing humidity via an ODE equation. From there, we would get a list of evaporation results for the period of time we plan of calculating the period of the drought, in this case, 365 days with 365 evaporation results. After that, we would set the amount of water that the reservoir currently has at the start and set the constants. Then the formula of the Water Level = Amount Stored + Inflow - Outflow - Evaporation rates using all 365 days would be applied and finally graphed for the water level versus time. We could also get a graph of the evaporation rate per the changing variable.</p>
+<p>What is known in this field is the actual water levels that we can compare to for the span of time we wish to compare. The motivation behind doing this project is to see if we can predict the water levels in drought conditions as it is a very important issue that California faces. Due to wanting to see how the evaporation rate changes with respect to one changing variable, this approach requires a computational aspect.</p>
+<p>The computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it.</p>
+<p>The specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project</p>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<ul>
+<li><p>Given it is a group project, what will the individual responsibilities be?</p></li>
+<li><p>What exactly is the <em>Dalton equation</em>?</p></li>
+<li><p>Does the evaporation depend on the surface area? Does the area stay constant, or does it get smaller as the level of the lake drops?</p></li>
+<li><p>What is the shape of the ODE? What parameters will you include in the model? Something like:</p></li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7Bdw%7D%7Bdt%7D%20=%20%5Cldots%0A"></p>
+<p>then</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Aw_%7Bt+1%7D%20=%20w_t%20+%20%5Cldots%0A"></p>
+<ul>
+<li>In order to make it comparable, use common units (meters, square meters, etc).</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>ODE</category>
+  <category>group project</category>
+  <category>good</category>
+  <category>evaporation</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/davie.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect</title>
+  <dc:creator>Matthew Q</dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/matthew.html</link>
   <description><![CDATA[ 
 
 
@@ -23,36 +63,129 @@
 
 <section id="summary" class="level2">
 <h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This project aims to simulate the gravitational field that would arise if one assigns mass to the components of a fractal set. To accomplish this, the dimension of the fractal must be finite, thus the perimeter of the fractal must be approximated with a finite number of interactions. Either a <a href="https://en.wikipedia.org/wiki/Koch_snowflake">Koch Snowflake</a>, the Mandelbrot set, the Julia set, or the Burning Ship fractals will be used as the set. The gravitational field must be assigned based on a fractal density function that will be influenced by the chosen resolution of the fractal’s perimeter. An arbitrarily scaled mass is assigned to each point in the set, then the density function is applied, then the resulting gravitational field is calculated.</p>
-<p>If time permits, the behavior of a point particle within the vicinity of the set will be investigated and used to drive a subsidiary fractal. Each point in the finite perimeter is assigned a ‘color’ varying from each end of the visual spectrum. The path of the particle subject to the graviational field will be calculated for varying initial position and velocities, indexed by some <img src="https://latex.codecogs.com/png.latex?i,j">. Iterating thrugh this process, the first point at which the particle’s position is equal to a point in the set, the color of this point will be assigned to that specific <img src="https://latex.codecogs.com/png.latex?i,j">. Next, all points <img src="https://latex.codecogs.com/png.latex?i,j"> will be plotted on a phase space plot of <img src="https://latex.codecogs.com/png.latex?i"> vs <img src="https://latex.codecogs.com/png.latex?j"> with their assigned color. Depending on the behavior of the fractal’s gravitational field, this phase space plot my resemble ‘fractal’ like patterns.</p>
+<p>This project will simulate the flight of a tennis ball under physical forces, with primarily focusing on how the spin influences its trajectory. Through the use of computational physics, I will numerically integrate the equation of motion for the ball while accounting for air resistance, gravity and the Magnus force caused by the topspin or backspin of the ball. Specifically, the simulation will demonstrate time dependent trajectories for tennis balls with different initial speeds, spin rates and launch angles. I will then generate plots in order to show visualizations of these paths. This will be useful in being able to compare how spin affects range, height and curvature to show how professional tennis players utilize spin to control the landing of their shots in the court.</p>
+</section>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>It is commonly known by tennis players that topspin causes the ball to dip more quickly and land safely inside the court while backspin will likely keep the ball floating in the air and out of the court boundary. A computational approach is needed to integrate the equations of motion and demonstrate the movement of the tennis ball. The equations of motion with relation to drag and the Magnus force are complex and nonlinear. Through simulating the ball’s motion with numerical integration in python, I can analyze different parameters such as different spins, speed and angles to generate precise trajectories. This can possibly be done using Euler methods of integration.</p>
+<p>##Results</p>
+<p>The computation will answer the questions about using different spin rates and how it changes it trajectory. Through numerically solving differential equations for position and velocity, I will be able to visualize and distinguish differences between topspin, backspin and no spin shots. The model will show how high the ball goes above a normal tennis net, how far it travels before landing and how quickly it curves downward. These results will consist of how air drag and gravity depend on velocity magnitude, range and direction. I expect the simulation to show that topspin creates an evidently faster downward curvature, while backspin creates a longer and slower path. The graphs that will be included will be trajectory vs time, landing position and velocity changes. These graphs will ultimately demonstrate the role of spin in shot control.</p>
+</section>
+<section id="summaryquestions" class="level2">
+<h2 class="anchored" data-anchor-id="summaryquestions">Summary/Questions</h2>
+<p>How much earlier does a topspin shot dip toward the court compared to a flat shot and backspin shot?</p>
+<p>How does the spin rate of a tennis ball influence its trajectory, in terms of range maximum height and curvature?</p>
+<p>How do different spin rates affect landing position?</p>
+<p>For a given initial speed and launch angle, how much does adding topspin or backspin change where the ball lands?</p>
+<p>I expect to find that topspin reduces the horizontal distance traveled and increases the downward acceleration, while backspin increases flight time and trajectory height. I will compare my simulated trajectories with online experimental data possibly from sports science research. This will prove if my model generates realistic trajectories and if landing spots are accurately predicted.</p>
+</section>
+<section id="comment" class="level2">
+<h2 class="anchored" data-anchor-id="comment">Comment</h2>
+<p>This is a good project that takes the trajectory and drag force to simulate tennis. The Magnus force is implemented from the rotation of the ball <img src="https://latex.codecogs.com/png.latex?%5Comega"> and the velocity <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bv%7D">.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Am%5Cfrac%7Bd%5Cvec%7Bx%7D%5E2%7D%7Bdt%5E2%7D%20=%20%5Cvec%7BF%7D_%7B%5Ctext%7Bgrav%7D%7D%20+%20%5Cvec%7BF%7D_%7B%5Ctext%7Bdrag%7D%7D%20+%20S%20%5Cvec%7B%5Comega%7D%20%5Ctimes%20%5Cvec%7Bv%7D%0A"></p>
+<p>Once the initial conditions are given, this can be implemented and solved in different scenarios.</p>
+<ul>
+<li>You can solve this for <img src="https://latex.codecogs.com/png.latex?S=0">, no Magnus force, and then with <img src="https://latex.codecogs.com/png.latex?S%3E0">.</li>
+</ul>
+<p>You can compute the trajectory, but also the horizontal range, the maximum height of the tennis ball and how long it takes. You can compare these values with the actual values and also graph them as a function of some initial condition (such as the initial speed).</p>
+
+
+</section>
+
+ ]]></description>
+  <category>good</category>
+  <category>trajectory</category>
+  <category>ODE</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/matthew.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Weather Data Analyzer: Looking at Climate Change Over Time</title>
+  <dc:creator>AB </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/ab.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="summary-of-project" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-project">Summary of Project</h2>
+<p>I want this project to analyze past data of the weather to identify any long term changes in the weather by using some of the Python that was tough to us. I would be working with a dataset that has daily or monthly temperatures, I want to see which would give better results, the project will calculate the averages, anomalies, and the yearly changes to show any useful information. I will use line graphs and bar charts to help visualize how temperature has changed over time.Python provides efficient tools for organizing and processing large datasets, making it possible to uncover trends that would be difficult or impossible to observe manually.</p>
 </section>
 <section id="motivation-background-question" class="level2">
-<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation / Background / Question</h2>
-<p><a href="https://arxiv.org/abs/1210.0282">Fractal billiards</a> is the most closely related field of study. Typically perfeclty elastic particles (billiards) are placed within a fractal, treating the points along it’s boundary as a rigid barrier. Assigning the billiards some mass, initial position, and initial speed, their kinematics are analyzed for patterns. As far as I am aware, no study has assigned the fractal <em>itself</em> a mass. I believe it may be interesting to see what kind of gravitational field arises from the fractal’s underlying pattern. It could be a trivial one, with the ‘center of mass’ as the center of a radial field, however when accounting for the varying density of a fractal set, I believe the resulting field could be non-trivial and thus give rise to interesting dynamics.</p>
-<p>The definition of a fractal requires that it be an infinitely complex and self similar pattern, meaning one may never calculate a fractal to it’s ‘full’ extent. This means computationally, the fractal must be approximated to some finite degree which introduces a need for numerical methods.</p>
+<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation/ Background/ Question</h2>
+<p>Understanding long-term weather patterns is important for studying climate change, environmental planning, and seasonal behavior. Raw weather data often contains thousands of temperature measurements, which are too large and complex to analyze manually. Python and its data science libraries offer a computational approach that allows for efficient data cleaning, numerical computation, and visualization. This project is motivated by the question: What long-term temperature trends can be identified from historical weather data using computational methods? By using Python, we can transform raw numerical data into clear, interpretable insights.</p>
 </section>
 <section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results:</h2>
-<p>I intend to show the gravitational vector field that arises from the fractal. This must be calculated numerically as the fractal is being approximated to a finite degree and can no longer be treated analytically.</p>
-<p>If time permits, I intend to create the phase space plot of the partile’s behavior as described above. This does pose a significant computational challenge as the resolution of the indexing for the position and velocity will weight heavily on computation time. The current structure of this approach essentially will require two embedded <code>for</code> loops for the indices, then a third embedded <code>while</code> loop for the path calculation. Depending on how computationally expensive this becomes, the approach may have to be reconfigured, or a degree of freedom may be removed (i.e.&nbsp;fixing initial speed).</p>
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>I think that the results of this project will produce summeries with number values and also graphs that will show temprature changes over the dataset’s timeframe. I also expect that the results will include the yearly average temperature, the hottest and coldest recorded values, and a graph of temperature anomalies showing deviations from the long-term mean. I believe that a numerrical omputation is essential for this project because it enables processing of large datasets, calculation of statistical values, and generation of visual trends that cannot be accurately obtained without automation and algorithmic analysis.</p>
 </section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>This project aims to answer two main questions:</p>
-<ul>
-<li>Does assigning mass to a fractal produce a nontrivial gravitational field?</li>
-<li>Do the kinematics of a point particle within the vicinity of a fractal with mass give rise to a subsidiary fractal?</li>
-</ul>
-<p>As these questions have not yet been explored (as far as I am aware), data does not yet exist for the results of this project to be compared to. Somewhat similar procedures for calculating subsidiary fractals have been carried out for systems like the three body problem and a ball bouncing within a semi circle. In all known cases, however, the applied field was some analog of a radially inward gravitational field.</p>
+<section id="summary-questions" class="level2">
+<h2 class="anchored" data-anchor-id="summary-questions">Summary/ Questions</h2>
+<p>I think the main question that I want the project to answer is: How have temperature patterns changed across the years represented in the dataset? . Another question that can be asked is Are average temperatures increasing or decreasing over time? Which years show the strongest anomalies? Are certain months or seasons contributing more to long-term trends? . The project is expected to reveal measurable temperature changes, such as gradual warming or increased seasonal variation. Comparable data exists from NOAA and other climate sources, allowing results to be contextualized and validated against established climate trends.</p>
 </section>
 <section id="comments" class="level2">
 <h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Interesting project, we need to focus this more and come up with a specific scenario to solve. For example, use the NOAA data on the CO2 concentration over time and model it with an equation that can be fit to the data.</p>
+<p>What do you mean with anomaly? How would you define that?</p>
+<p>Maybe use a data set and use smoothing or interpolation to find the mean temperatures, or fill in holes in the data. It would be best to start with a strong set of data that is available from NOAA.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>challenging</category>
+  <category>curve fit</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/ab.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn</title>
+  <dc:creator>Chenchu </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/chenchu.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This project models an Earth-to-Mars Hohmann transfer using a continuous trans-Mars injection (TMI) burn instead of an idealized instantaneous Hohmann impulse.</p>
+<p>During the gradual buildup of velocity, Earth’s and the Sun’s gravity continuously act on the spacecraft, warping its trajectory away from the simple analytical ellipse predicted by an ideal impulse. These overlapping gravitational and thrust effects make the motion impossible to solve analytically, requiring step-by-step numerical integration.</p>
+<p>This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory. This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory.</p>
+</section>
+<section id="motivationbackgroundquestion" class="level2">
+<h2 class="anchored" data-anchor-id="motivationbackgroundquestion">Motivation/Background/Question</h2>
+<p>The traditional Hohmann transfer is an idealistic method to plan trajectories for a spacecraft to move from one orbit to another, assuming idealistic and instantaneous burns which simply cannot exist in reality. Spacecraft accelerate gradually over time while being acting upon the gravitation influences of nearby bodies, in our case being the Sun and Earth, in turn preventing the perfect elliptical trajectories predicted by Hohmann transfers.</p>
+<p>During a continuous burn, thrust is pushing in one direction while gravity from Earth and the Sun is pulling in another, these two forces act at the same time continuous along with the change in the spacecraft’s velocity, preventing a simple analytical solution.</p>
+<p>Hohmann transfers are used in orbital dynamics to calculate the most fuel efficient setups (the lowest needed <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V">) to move between two orbits while also being more simple to calculate. In real Mars transfer missions, Hohmann transfers serve as a baseline to plan missions initially but must be built upon to account for gravity losses during finite burns, planer changes requiring more <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> and margins of safety given the likelihood of delays or errors within burns.</p>
+<p>To do this, we will have to numerically integrate the Spacecraft’s position and velocity over time.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>From my research regarding the numerical approach for this problem the given spacecraft’s position “x”, velocity “v” and mass “m” evolve as such:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%20x%20=%20v"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%20v%20=%20-%5Cmu_%5Codot%20%5Cfrac%7Bx%7D%7Bx%5E3%7D%20+%20%5Cfrac%7BT%7D%7Bm%7D%5Chat%20u"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%7Bm%7D%20=%20-%5Cfrac%7BT%7D%7BI_%7Bsp%7D%20g_0%7D"></p>
+<p>T = Thrust, <img src="https://latex.codecogs.com/png.latex?%5Chat%20u"> is direction and <img src="https://latex.codecogs.com/png.latex?%5Cmu_%5Codot"> is the Sun’s gravitational parameter.</p>
+<p>As seen, due to how m, v and <img src="https://latex.codecogs.com/png.latex?%5Chat%20u"> change over time, an analytical solution for x(t) and v(t) is not possible.</p>
+<p>Therefore I will be utalizing a numerical method called “Runge - Kutta” to calculate the trajectory for each step, more steps meaning the higher the resolution and more accurate my predicted path. This will at the end of the day help me achieve my actual goal of understanding how Thrust and gravitational forces on the spacecraft interact with each other through the burn, as well as help me understand the change in <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> predicted by Hohmann as compared to integrating over time for a more accurate value.</p>
+</section>
+<section id="summaryquestions" class="level2">
+<h2 class="anchored" data-anchor-id="summaryquestions">Summary/Questions</h2>
+<p>This project aims to answer how a continuous TMI burn changes a spacecraft’s trajectory compared to the ideal Hohmann transfer that assumes instantaneous burns. I expect to find that continuous thrust causes gravity losses, requiring slightly more <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> and altering the transfer time. The simulation should show how the gradual acceleration bends the spacecraft’s path away from the perfect elliptical orbit predicted analytically.</p>
+<p>Comparable data can be drawn from published Hohmann transfer values for Earth–Mars missions, which serve as a baseline for validating the analytical results. For the numeral analysis I will draw from the launch C3 of real mars missions via JPL’s public press kits, I’ll use the C3 to compute the impulsive TMI from parking orbit and then will compare that to my continuous burn results.</p>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>As far as I understand, the Hohmann transfer yields analytical ellipses as the result. It means that it has a closed-form analytical solution.</p>
+<p>For a numerical solution; we would need further changes, such as perturbations of some kind, etc. what kind of perturbation or realistic scenario would you include? The argument here is that including <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bu%7D"> will just do that. What is the time dependence of this unit vector?</p>
 <ul>
-<li><p>Which fractal will you use?</p></li>
-<li><p>How is exactly is the fractal defined? Which one are you using, will you calculate the gravitational field on a 2D raster? Will you compare the fractal to a non-fractal, say a disk?</p></li>
-<li><p>How large is your 2D grid?</p></li>
-<li><p>For the computation it is best to do it in dimensionless units. You need some normalization or density without units. Therefore, define the gravitational interaction in terms of unitless parameters. Distance will then be measured as part of the grid.</p></li>
-<li><p>How will you visualize your results? Contour plots?</p></li>
+<li><p>Are the equations that were listed in one-dimension? is <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bu%7D"> just the direction + or - or are these equations on a plane in two dimensions? Could you write out the equations in vector form or a form that can be implemented into <code>odeint()</code>.</p></li>
+<li><p>What is the sun’s gravitational parameter?</p></li>
+<li><p>What kind of data is available from JPL?</p></li>
 </ul>
 
 
@@ -60,39 +193,15 @@
 
  ]]></description>
   <category>ODE</category>
-  <category>fractal</category>
   <category>gravity</category>
-  <category>good</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/lucsikgavin_86055_27016585_FinalProjectProposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-  <media:content url="https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif" medium="image" type="image/gif"/>
-</item>
-<item>
-  <title>Heat Transfer in Tube Furnace for Semiconductors</title>
-  <dc:creator>Mailey </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/trieumailey_57877_27030086_project proposal.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>The objective of the project is to determine the temperature profile laterally along a cylindrical tube furnace when specific parameters for conduction and radiation are given. There is an existing paper on this heat transfer model with plotted lateral temperature profiles that can used to reference for verification and validation. To simplify this to be easier to compute, there will be specific parameters defined for the dimensions of the tube furnace. There will also be some boundary conditions in place to make the temperature profile match more closely to the paper’s temperature plot such as having the walls (at a certain distance x and radius r) having a hotter temperature and the top and bottom surfaces of the tube furnace to be cooler. This way, the middle furnace section should be displayed as the hottest and the rest of the furnace would cool in a symmetric manner. With those parameters in mind, plotting the lateral temperature profile should fall into place as long as the correct numerical methods are chosen for the heat transfer (the paper mentions using trapezoidal rule).</p>
-<p>This model and problem is meant to demonstrate the proper temperature that’s suitable for semiconductor crystal growth. The computational component comes from implementing the equations for conduction and radiation from the paper and plotting the temperature versus the lateral length of the tube furnace as distance x. It’s computational in how heat transfer is a partial differential equation type of phenomenon, which calls for iterative and numerical methods. This is particularly appealing to me because I am more used to seeing this problem through an engineering lens but hopefully with this physics project, I can gain more understanding to modelling this problem, as this is based off a real task that an established semiconductor fabrication company is undertaking.</p>
-<p>The expected results should be some sort of temperature plot of the lateral temperature profile of the tube furnace. The total heat flux can be calculated from a differential equation on conduction that may be combined with a specific radiation equation. Please note that there may be some minor changes to simplify the model to be more doable. There is an equation to be looked at in the research paper being referenced for this design project but there is another conduction equation to be considered in the class textbook in chapter 14.</p>
-<p>The question to be answered is what is the lateral temperature profile of the tube furnace based on the given parameters for conduction and radiation heat transfer involved. There is in fact comparable data that can be referenced from this paper on <a href="https://doi.org/10.1016/0735-1933(96)00023-1">“Modelling Temperature Distribution in Cylindrical Crystal Growth Furnaces”</a>. The data to be used in comparison is the middle curve in Figure 2a, where the chosen heat flux is <img src="https://latex.codecogs.com/png.latex?q%20=%200.1431%20W/cm%5E2">. In section a of Figure 2, the chosen dimensions of the tube furnace was <img src="https://latex.codecogs.com/png.latex?L%20=%2020%20cm"> and <img src="https://latex.codecogs.com/png.latex?D%20=%202.5%20cm">. It’s to be expected that the middle section of the tube furnace be the hottest and the bottom and top ends as the coldest, making a parabolic shape as the temperature profile.</p>
-
-
-
- ]]></description>
-  <category>PDE</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/trieumailey_57877_27030086_project proposal.html</guid>
+  <category>model</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/chenchu.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Frequency Analysis with Hodgkin-Huxley</title>
   <dc:creator>Ash </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html</link>
+  <link>https://kdruck.com/fp-f25/posts/submissions/ash.html</link>
   <description><![CDATA[ 
 
 
@@ -145,13 +254,13 @@
   <category>ODE</category>
   <category>neuron</category>
   <category>model</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/carreraash_LATE_119018_27076889_ProjectProposal.html</guid>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/ash.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Dielectric Variations of a DBD Plasma Actuator in a Conductive Box</title>
   <dc:creator>Matthew F</dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/figueroa.html</link>
+  <link>https://kdruck.com/fp-f25/posts/submissions/matthewf.html</link>
   <description><![CDATA[ 
 
 
@@ -204,354 +313,50 @@
   <category>dielectric</category>
   <category>plasma</category>
   <category>challenging</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/figueroa.html</guid>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/matthewf.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Stellar Structure</title>
-  <dc:creator>Joseph </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/alasjoseph_159794_27030314_Project Proposal.html</link>
+  <title>Heat Transfer in Tube Furnace for Semiconductors</title>
+  <dc:creator>Mailey </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/mailey.html</link>
   <description><![CDATA[ 
 
 
 
 
 
-<section id="summary-paragraph" class="level2">
-<h2 class="anchored" data-anchor-id="summary-paragraph">Summary Paragraph</h2>
-<p>For my final project, I aim to investigate basic stellar structure by solving for the equations of state of a star and using the results to construct a synthetic Hertzsprung-Russell (HR) diagram. The composition of the star influences the macroscopic observables such as pressure, temperature and luminosity. Typically, hydrogen and helium dominate the composition of a star influencing its observables. The produced HR diagram will be explored by varying such conditions, specifically the mean molecular weight (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and stellar mass (<img src="https://latex.codecogs.com/png.latex?M">). The project will connect how these parameters influence the macroscopic stellar properties using numerical computation for the solutions of various (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and (<img src="https://latex.codecogs.com/png.latex?M">).</p>
-</section>
-<section id="motivation-background-question" class="level2">
-<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation / Background / Question :</h2>
-<p>In astrophysics, the equations of stellar strucutre consist of nonlinear coupled differential equations that cannot be solved analytically. <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bdp%7D%7Bdr%7D%20=%20%5Cfrac%7B-Gm(r)%5Crho(r)%7D%7Br%5E%7B2%7D%7D%20,%20%20%20%5Cfrac%7BdL%7D%7Bdr%7D%20%20=%204%5Cpi%20r%5E%7B2%7D%20%5Crho(r)%20%5Cepsilon(T,r),%20"> <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7BdT%7D%7Bdr%7D%20=%20%5Cfrac%7B-3%5Ckappa_%7B%5Clambda%7D%5Crho(r)L(r)%7D%7B64%5Cpi%20r%5E%7B2%7D%20%5Csigma%20%5C%20T%5E%7B3%7D(r)%7D,%20%5Cfrac%7Bdm%7D%7Bdr%7D%20=%204%5Cpi%20r%5E%7B2%7D%20%5Crho(r)"> <img src="https://latex.codecogs.com/png.latex?%20P%20=%20%5Cfrac%7B%5Crho%20%5Ckappa%20T%7D%7B%5Cmu%20m_%7BH%7D%7D"> These equations describe hydrostatic equilibrium, mass continuity, luminosty and energy generation. The importance of such equations is to link thermodynamic quantities to the macroscopic observables such as luminosity, radius of the star, and surface temperature. Here, the mean molecular weight is a key parameter in the equation of state as it sets the conditions for the pressure and temperature required to support a given stellar mass. Changes in <img src="https://latex.codecogs.com/png.latex?%5Cmu"> will alter <img src="https://latex.codecogs.com/png.latex?T(r),%5Crho(r)">, and <img src="https://latex.codecogs.com/png.latex?L(r)">. Because of the nonlinear coupling of these equations, numerical integration is required to explore how stellar properties depend on their internal composition.</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>By numerically integrating the stellar structure equations for stars of varying mass and mean molecular weight, I expect to produce a value for the density, temperaure, pressure and luminosity for each model. From this, I aim to plot a collection of synthetic data on the HR diagram. I anticipate that increasing <img src="https://latex.codecogs.com/png.latex?%5Cmu"> at some fixed stellar mass will increase the central temperature and luminoisty, shifting stars upward on the HR diagram. Similary, increaing stellar mass I anticipate will produce hotter and more luminous stars, hence shifting the stars upward on the HR diagram as well. Numerical compuataion is essential for this project because of the coupled ODEs being nonlinear and dependent on both <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and <img src="https://latex.codecogs.com/png.latex?M">, preventing me from solving these analytically.</p>
-</section>
-<section id="summaryquestion" class="level2">
-<h2 class="anchored" data-anchor-id="summaryquestion">Summary/Question</h2>
-<p>The central question guiding the project is: How do variations in stellar composition (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and stellar mass (<img src="https://latex.codecogs.com/png.latex?M">) affect the predicted properties and HR diagram position of stars? I expect to find that higher μ increases the central temperature, nuclear energy generation rate, and luminosity, producing shifts in the HR diagram. Increasing mass will have a similar effect, producing hotter, brighter stars. These synthetic results will be compared qualitatively with observed main-sequence stars and known empirical scaling laws, illustrating how the microscopic physics propagates to macroscopic observable star behavior.</p>
-</section>
+<p>The objective of the project is to determine the temperature profile laterally along a cylindrical tube furnace when specific parameters for conduction and radiation are given. There is an existing paper on this heat transfer model with plotted lateral temperature profiles that can used to reference for verification and validation. To simplify this to be easier to compute, there will be specific parameters defined for the dimensions of the tube furnace. There will also be some boundary conditions in place to make the temperature profile match more closely to the paper’s temperature plot such as having the walls (at a certain distance <img src="https://latex.codecogs.com/png.latex?x"> and radius <img src="https://latex.codecogs.com/png.latex?r">) having a hotter temperature and the top and bottom surfaces of the tube furnace to be cooler. This way, the middle furnace section should be displayed as the hottest and the rest of the furnace would cool in a symmetric manner. With those parameters in mind, plotting the lateral temperature profile should fall into place as long as the correct numerical methods are chosen for the heat transfer (the paper mentions using trapezoidal rule).</p>
+<p>This model and problem is meant to demonstrate the proper temperature that’s suitable for semiconductor crystal growth. The computational component comes from implementing the equations for conduction and radiation from the paper and plotting the temperature versus the lateral length of the tube furnace as distance x. It’s computational in how heat transfer is a partial differential equation type of phenomenon, which calls for iterative and numerical methods. This is particularly appealing to me because I am more used to seeing this problem through an engineering lens but hopefully with this physics project, I can gain more understanding to modelling this problem, as this is based off a real task that an established semiconductor fabrication company is undertaking.</p>
+<p>The expected results should be some sort of temperature plot of the lateral temperature profile of the tube furnace. The total heat flux can be calculated from a differential equation on conduction that may be combined with a specific radiation equation. Please note that there may be some minor changes to simplify the model to be more doable. There is an equation to be looked at in the research paper being referenced for this design project but there is another conduction equation to be considered in the class textbook in chapter 14.</p>
+<p>The question to be answered is what is the lateral temperature profile of the tube furnace based on the given parameters for conduction and radiation heat transfer involved. There is in fact comparable data that can be referenced from this paper on <a href="https://doi.org/10.1016/0735-1933(96)00023-1">“Modelling Temperature Distribution in Cylindrical Crystal Growth Furnaces”</a>. The data to be used in comparison is the middle curve in Figure 2a, where the chosen heat flux is <img src="https://latex.codecogs.com/png.latex?q%20=%200.1431%20W/cm%5E2">. In section a of Figure 2, the chosen dimensions of the tube furnace was <img src="https://latex.codecogs.com/png.latex?L%20=%2020%20cm"> and <img src="https://latex.codecogs.com/png.latex?D%20=%202.5%20cm">. It’s to be expected that the middle section of the tube furnace be the hottest and the bottom and top ends as the coldest, making a parabolic shape as the temperature profile.</p>
 <section id="comments" class="level2">
 <h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>This project is about reproducing results and understanding the model that was published better solving numerically a partial differential equation. The next steps include specifying more details.</p>
+<p>The boundary conditions will be important. How big will be your grid? What time steps are you choosing? How do you define thermal equilibrium or when do you stop the calculation?</p>
 <ul>
-<li><p>Define clearly all the variables; i.e.&nbsp;what is <img src="https://latex.codecogs.com/png.latex?L(r)">, etc. what input parameters do you need? for example <img src="https://latex.codecogs.com/png.latex?%5Ckappa_%7B%5Clambda%7D">, etc.</p></li>
-<li><p>Make simplifications; emissivity = 1, etc.</p></li>
-<li><p>The equations are coupled and have variables that range from small to large. Use dimensionless units as much as possible, so redefine the variables.</p></li>
-<li><p>use <code>odeint()</code> and setup the equations well to solve</p></li>
-<li><p>provide some test cases, what will happen <img src="https://latex.codecogs.com/png.latex?L%20%5Capprox%20m">, etc.</p></li>
-<li><p>Simplify the problem to have a test case; i.e.&nbsp;first solve a simpler problem. What could that be?</p></li>
+<li>clarify the grid, boundary conditions and initial conditions</li>
+<li>explicitly write the PDE equation</li>
 </ul>
+<p>Will you be using the Verlet method, as in:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7Bd%5E2T%7D%7Bdx%5E2%7D%20%5Capprox%20k%20%5Cfrac%7BT_%7Bi+1%7D%20-%202T_i%20%20+%20T_%7Bi-1%7D%7D%7B(%5CDelta%20x)%5E2%7D%0A"></p>
+<p>Define exactly what <img src="https://latex.codecogs.com/png.latex?k"> will be, make sure that you use SI units</p>
 
 
 </section>
 
  ]]></description>
-  <category>ODE</category>
-  <category>gravity</category>
+  <category>PDE</category>
   <category>good</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/alasjoseph_159794_27030314_Project Proposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>The 3 body problem</title>
-  <dc:creator>Victoria G and Ivy</dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/grajeda.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>The 3 body problem takes real data, our orbital diagram of the known solar system, and applies a hypothetical question, what would our Earth look like with 3 masses orbiting Earth itself?</p>
-<p>My motivation itself came from one of my favorite book series <a href="https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)">The 3 body problem</a>. It takes this idea and explores what different ‘Earths’ would look like, not just in the broader sense, but looks at the climate, what would be considered normal? How would the Sun rise and set? This is my main source of inspiration. While orbits of the solar system has been studied since man first looked up, it was always us orbiting something else, well except for that hiccup in the old times, I am looking at you Eudoxus and Ptolmey with your geocentic theory. Well, I wanted to take what we know about our heliocentric solar system and see what it would take for 3 masses, including the moon, and how it would effect the Earth. Effect the Earth in the way of could it be feasible, how large would the masses have to be, or small, to keep a habital condition here on Earth. This would require a computational approach in more ways then one. It would take the basis of what we know about Newtonian mechanics, which we CAN solve analytically. This idea becomes interesting by that special component of adding a third body, this then turns our approach into a ‘coupled nonlinear differential equation’, which I am currently learning about in my numerical analysis class. Initial conditions would lead to chaotic behavior, and an analytical approach would simply, not be able to keep up.</p>
-<p>This would require pulling my skill sets from past and present classes, including but not limited to; Computational Physics, Analytic Mechanics, Numerical Analysics, Differentional Equations A &amp; B and others. In the extremely basic expectation, I expect larger masses to completely destroy this model, my end result existing in an simulation where Earth would not be habital, gravitational forces itself would not make this possible. I expect possible smaller masses to potentially make this model possible, however how small would be the real finding. More digging would have to be done to see if there was comparable data out there, that would either lead me to believe my findings were heading in the right direction or not.</p>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>Great concept, the question and scope needs to be sharpened at this moment. For example, what is “habitability”? Is that defined by temperature, distance, etc? What masses, initial positions and velocities will be probed. The phase space can get very large, since we have 3 bodies, it means 9 starting positions (assuming planets are in one plane). Maybe keep 1 body constant.</p>
-<p>What is stability? Sometimes it may orbit a few times, then a planet will go off. Sometimes, numerical precision limits the orbit.</p>
-<p>Start with a simple system, using realistic parameters, make sure that your numbers are not too small or too large.</p>
-<p>Use energy conservation to make sure that your computation is not running afoul of basic laws. (Issue with the Euler method).</p>
-<p>Best would be to change one parameter at a time, so need to choose which one? Starting position of the moon?</p>
-
-
-</section>
-
- ]]></description>
-  <category>challenging</category>
-  <category>simulation</category>
-  <category>gravity</category>
-  <category>group project</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/grajeda.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-  <media:content url="https://upload.wikimedia.org/wikipedia/commons/0/0a/3_Body_Problem_title_card.png" medium="image" type="image/png"/>
-</item>
-<item>
-  <title>Modeling the trajectory of a spinning tennis ball using gravity, drag and the Magnus effect</title>
-  <dc:creator>Matthew Q</dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This project will simulate the flight of a tennis ball under physical forces, with primarily focusing on how the spin influences its trajectory. Through the use of computational physics, I will numerically integrate the equation of motion for the ball while accounting for air resistance, gravity and the Magnus force caused by the topspin or backspin of the ball. Specifically, the simulation will demonstrate time dependent trajectories for tennis balls with different initial speeds, spin rates and launch angles. I will then generate plots in order to show visualizations of these paths. This will be useful in being able to compare how spin affects range, height and curvature to show how professional tennis players utilize spin to control the landing of their shots in the court.</p>
-</section>
-<section id="motivation" class="level2">
-<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
-<p>It is commonly known by tennis players that topspin causes the ball to dip more quickly and land safely inside the court while backspin will likely keep the ball floating in the air and out of the court boundary. A computational approach is needed to integrate the equations of motion and demonstrate the movement of the tennis ball. The equations of motion with relation to drag and the Magnus force are complex and nonlinear. Through simulating the ball’s motion with numerical integration in python, I can analyze different parameters such as different spins, speed and angles to generate precise trajectories. This can possibly be done using Euler methods of integration.</p>
-<p>##Results</p>
-<p>The computation will answer the questions about using different spin rates and how it changes it trajectory. Through numerically solving differential equations for position and velocity, I will be able to visualize and distinguish differences between topspin, backspin and no spin shots. The model will show how high the ball goes above a normal tennis net, how far it travels before landing and how quickly it curves downward. These results will consist of how air drag and gravity depend on velocity magnitude, range and direction. I expect the simulation to show that topspin creates an evidently faster downward curvature, while backspin creates a longer and slower path. The graphs that will be included will be trajectory vs time, landing position and velocity changes. These graphs will ultimately demonstrate the role of spin in shot control.</p>
-</section>
-<section id="summaryquestions" class="level2">
-<h2 class="anchored" data-anchor-id="summaryquestions">Summary/Questions</h2>
-<p>How much earlier does a topspin shot dip toward the court compared to a flat shot and backspin shot?</p>
-<p>How does the spin rate of a tennis ball influence its trajectory, in terms of range maximum height and curvature?</p>
-<p>How do different spin rates affect landing position?</p>
-<p>For a given initial speed and launch angle, how much does adding topspin or backspin change where the ball lands?</p>
-<p>I expect to find that topspin reduces the horizontal distance traveled and increases the downward acceleration, while backspin increases flight time and trajectory height. I will compare my simulated trajectories with online experimental data possibly from sports science research. This will prove if my model generates realistic trajectories and if landing spots are accurately predicted.</p>
-</section>
-<section id="comment" class="level2">
-<h2 class="anchored" data-anchor-id="comment">Comment</h2>
-<p>This is a good project that takes the trajectory and drag force to simulate tennis. The Magnus force is implemented from the rotation of the ball <img src="https://latex.codecogs.com/png.latex?%5Comega"> and the velocity <img src="https://latex.codecogs.com/png.latex?%5Cvec%7Bv%7D">.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0Am%5Cfrac%7Bd%5Cvec%7Bx%7D%5E2%7D%7Bdt%5E2%7D%20=%20%5Cvec%7BF%7D_%7B%5Ctext%7Bgrav%7D%7D%20+%20%5Cvec%7BF%7D_%7B%5Ctext%7Bdrag%7D%7D%20+%20S%20%5Cvec%7B%5Comega%7D%20%5Ctimes%20%5Cvec%7Bv%7D%0A"></p>
-<p>Once the initial conditions are given, this can be implemented and solved in different scenarios.</p>
-<ul>
-<li>You can solve this for <img src="https://latex.codecogs.com/png.latex?S=0">, no Magnus force, and then with <img src="https://latex.codecogs.com/png.latex?S%3E0">.</li>
-</ul>
-<p>You can compute the trajectory, but also the horizontal range, the maximum height of the tennis ball and how long it takes. You can compare these values with the actual values and also graph them as a function of some initial condition (such as the initial speed).</p>
-
-
-</section>
-
- ]]></description>
-  <category>good</category>
-  <category>trajectory</category>
-  <category>ODE</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/quinonesmatthew_34991_27019126_Project Proposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Modeling and Visualizing a Binary Black Hole Chirp</title>
-  <dc:creator>Said </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/ortegasaid_159820_27014827_Project Proposal.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>In this project I will attempt to simulate a gravitational wave chirp signal which is produced by two merging black holes. I can compare it to data from LIGOs detections to see how close my simulation is. Using NumPy, SciPy, and Matplotlib, I will model the inspiral phase using a Newtonian model with gravitational wave energy loss. I want to visualize the resulting waveform, spectrogram, and orbital motion.</p>
-<p>Gravitational waves come from accelerating massive bodies, the binary black holes produce very strong and measurable signals. As they lose energy to radiation their orbits tighten and frequency increases creating the chirp. Because the system evolves nonlinearly I will need numerical integration to generate the waveform to compare with real data.</p>
-<p>My expected results would include the simulated chirp waveform that increases in both amplitude and frequency also a spectrogram showing the time frequency evolution. And an orbital animation of the merging system to visualize what is happening.</p>
-<p>My main question is “Can a simplified model produce the features of a real binary black hole chirp?” I expect the data to match somewhat, and there is comparable data available.</p>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>Do you start with point sources? There is a lot of data for this kind of problem available.</p>
-<ul>
-<li><p>What starting conditions will you use? What are the initial masses? What are the quantities that you will be using? Can you make them dimensionless for the computation?</p></li>
-<li><p>What is the initial separation distance?</p></li>
-</ul>
-<p>The challenge is to implement the energy loss model. Much of that work is though analytical, not numerical. What is the numerical work that you can do?</p>
-<p>Are you using Newtonian gravity?</p>
-<p>Will you animate the result?</p>
-<p>What data from LIGO can you use for the comparison?</p>
-
-
-</section>
-
- ]]></description>
-  <category>gravity</category>
-  <category>good</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/ortegasaid_159820_27014827_Project Proposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-  <media:content url="https://upload.wikimedia.org/wikipedia/commons/d/d4/LIGO_schematic_%28multilang%29.svg" medium="image" type="image/svg+xml"/>
-</item>
-<item>
-  <title>Weather Data Analyzer: Looking at Climate Change Over Time</title>
-  <dc:creator>AB </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/hernandezab_123093_27015118_Project Proposal.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="summary-of-project" class="level2">
-<h2 class="anchored" data-anchor-id="summary-of-project">Summary of Project</h2>
-<p>I want this project to analyze past data of the weather to identify any long term changes in the weather by using some of the Python that was tough to us. I would be working with a dataset that has daily or monthly temperatures, I want to see which would give better results, the project will calculate the averages, anomalies, and the yearly changes to show any useful information. I will use line graphs and bar charts to help visualize how temperature has changed over time.Python provides efficient tools for organizing and processing large datasets, making it possible to uncover trends that would be difficult or impossible to observe manually.</p>
-</section>
-<section id="motivation-background-question" class="level2">
-<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation/ Background/ Question</h2>
-<p>Understanding long-term weather patterns is important for studying climate change, environmental planning, and seasonal behavior. Raw weather data often contains thousands of temperature measurements, which are too large and complex to analyze manually. Python and its data science libraries offer a computational approach that allows for efficient data cleaning, numerical computation, and visualization. This project is motivated by the question: What long-term temperature trends can be identified from historical weather data using computational methods? By using Python, we can transform raw numerical data into clear, interpretable insights.</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>I think that the results of this project will produce summeries with number values and also graphs that will show temprature changes over the dataset’s timeframe. I also expect that the results will include the yearly average temperature, the hottest and coldest recorded values, and a graph of temperature anomalies showing deviations from the long-term mean. I believe that a numerrical omputation is essential for this project because it enables processing of large datasets, calculation of statistical values, and generation of visual trends that cannot be accurately obtained without automation and algorithmic analysis.</p>
-</section>
-<section id="summary-questions" class="level2">
-<h2 class="anchored" data-anchor-id="summary-questions">Summary/ Questions</h2>
-<p>I think the main question that I want the project to answer is: How have temperature patterns changed across the years represented in the dataset? . Another question that can be asked is Are average temperatures increasing or decreasing over time? Which years show the strongest anomalies? Are certain months or seasons contributing more to long-term trends? . The project is expected to reveal measurable temperature changes, such as gradual warming or increased seasonal variation. Comparable data exists from NOAA and other climate sources, allowing results to be contextualized and validated against established climate trends.</p>
-</section>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>Interesting project, we need to focus this more and come up with a specific scenario to solve. For example, use the NOAA data on the CO2 concentration over time and model it with an equation that can be fit to the data.</p>
-<p>What do you mean with anomaly? How would you define that?</p>
-<p>Maybe use a data set and use smoothing or interpolation to find the mean temperatures, or fill in holes in the data. It would be best to start with a strong set of data that is available from NOAA.</p>
-
-
-</section>
-
- ]]></description>
-  <category>challenging</category>
-  <category>curve fit</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/hernandezab_123093_27015118_Project Proposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Hohmann Transfer Visualization from Earth to Mars via Continous TMI Burn</title>
-  <dc:creator>Chenchu </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This project models an Earth-to-Mars Hohmann transfer using a continuous trans-Mars injection (TMI) burn instead of an idealized instantaneous Hohmann impulse.</p>
-<p>During the gradual buildup of velocity, Earth’s and the Sun’s gravity continuously act on the spacecraft, warping its trajectory away from the simple analytical ellipse predicted by an ideal impulse. These overlapping gravitational and thrust effects make the motion impossible to solve analytically, requiring step-by-step numerical integration.</p>
-<p>This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory. This simulation helps illustrate how real interplanetary transfers differ from the idealized models often used in theory.</p>
-</section>
-<section id="motivationbackgroundquestion" class="level2">
-<h2 class="anchored" data-anchor-id="motivationbackgroundquestion">Motivation/Background/Question</h2>
-<p>The traditional Hohmann transfer is an idealistic method to plan trajectories for a spacecraft to move from one orbit to another, assuming idealistic and instantaneous burns which simply cannot exist in reality. Spacecraft accelerate gradually over time while being acting upon the gravitation influences of nearby bodies, in our case being the Sun and Earth, in turn preventing the perfect elliptical trajectories predicted by Hohmann transfers.</p>
-<p>During a continuous burn, thrust is pushing in one direction while gravity from Earth and the Sun is pulling in another, these two forces act at the same time continuous along with the change in the spacecraft’s velocity, preventing a simple analytical solution.</p>
-<p>Hohmann transfers are used in orbital dynamics to calculate the most fuel efficient setups (the lowest needed <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V">) to move between two orbits while also being more simple to calculate. In real Mars transfer missions, Hohmann transfers serve as a baseline to plan missions initially but must be built upon to account for gravity losses during finite burns, planer changes requiring more <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> and margins of safety given the likelihood of delays or errors within burns.</p>
-<p>To do this, we will have to numerically integrate the Spacecraft’s position and velocity over time.</p>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-<p>From my research regarding the numerical approach for this problem the given spacecraft’s position “x”, velocity “v” and mass “m” evolve as such:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%20x%20=%20v"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%20v%20=%20-%5Cmu_%5Codot%20%5Cfrac%7Bx%7D%7Bx%5E3%7D%20+%20%5Cfrac%7BT%7D%7Bm%7D%5Chat%20u"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cdot%7Bm%7D%20=%20-%5Cfrac%7BT%7D%7BI_%7Bsp%7D%20g_0%7D"></p>
-<p>T = Thrust, <img src="https://latex.codecogs.com/png.latex?%5Chat%20u"> is direction and <img src="https://latex.codecogs.com/png.latex?%5Cmu_%5Codot"> is the Sun’s gravitational parameter.</p>
-<p>As seen, due to how m, v and <img src="https://latex.codecogs.com/png.latex?%5Chat%20u"> change over time, an analytical solution for x(t) and v(t) is not possible.</p>
-<p>Therefore I will be utalizing a numerical method called “Runge - Kutta” to calculate the trajectory for each step, more steps meaning the higher the resolution and more accurate my predicted path. This will at the end of the day help me achieve my actual goal of understanding how Thrust and gravitational forces on the spacecraft interact with each other through the burn, as well as help me understand the change in <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> predicted by Hohmann as compared to integrating over time for a more accurate value.</p>
-</section>
-<section id="summaryquestions" class="level2">
-<h2 class="anchored" data-anchor-id="summaryquestions">Summary/Questions</h2>
-<p>This project aims to answer how a continuous TMI burn changes a spacecraft’s trajectory compared to the ideal Hohmann transfer that assumes instantaneous burns. I expect to find that continuous thrust causes gravity losses, requiring slightly more <img src="https://latex.codecogs.com/png.latex?%5CDelta%20V"> and altering the transfer time. The simulation should show how the gradual acceleration bends the spacecraft’s path away from the perfect elliptical orbit predicted analytically.</p>
-<p>Comparable data can be drawn from published Hohmann transfer values for Earth–Mars missions, which serve as a baseline for validating the analytical results. For the numeral analysis I will draw from the launch C3 of real mars missions via JPL’s public press kits, I’ll use the C3 to compute the impulsive TMI from parking orbit and then will compare that to my continuous burn results.</p>
-</section>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>As far as I understand, the Hohmann transfer yields analytical ellipses as the result. It means that it has a closed-form analytical solution.</p>
-<p>For a numerical solution; we would need further changes, such as perturbations of some kind, etc. what kind of perturbation or realistic scenario would you include? The argument here is that including <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bu%7D"> will just do that. What is the time dependence of this unit vector?</p>
-<ul>
-<li><p>Are the equations that were listed in one-dimension? is <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bu%7D"> just the direction + or - or are these equations on a plane in two dimensions? Could you write out the equations in vector form or a form that can be implemented into <code>odeint()</code>.</p></li>
-<li><p>What is the sun’s gravitational parameter?</p></li>
-<li><p>What kind of data is available from JPL?</p></li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>ODE</category>
-  <category>gravity</category>
-  <category>model</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/yakasirisaravananchenchu_97921_27027193_Untitled-1.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Water Reservoir Levels in a Drought</title>
-  <dc:creator>Davie and Mingqi</dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>The project itself has two parts to the computational aspect when simulating the conditions of a drought. The first being that the amount of percipitation is defined and held constant for what would be considered as below average in the region. This region we wish to explore is the Oroville reservoir and the conversion from inches of rain into the water level unit of acre feet is found via getting the total catchment area and then multiply by the rainfall. Then from there, using one of the evaporation formulas, in this case, we plan on using the <a href="https://www.ldeo.columbia.edu/~martins/hydro/homework/evaporation.html">Dalton equation</a>, we would choose what variable would be fluctuating to change the evaporation rate over a period of time. For example, using sympy, we would take the partial derivative in terms of humidity and then get the evaporation rates once setting the other variables constant and a changing humidity via an ODE equation. From there, we would get a list of evaporation results for the period of time we plan of calculating the period of the drought, in this case, 365 days with 365 evaporation results. After that, we would set the amount of water that the reservoir currently has at the start and set the constants. Then the formula of the Water Level = Amount Stored + Inflow - Outflow - Evaporation rates using all 365 days would be applied and finally graphed for the water level versus time. We could also get a graph of the evaporation rate per the changing variable.</p>
-<p>What is known in this field is the actual water levels that we can compare to for the span of time we wish to compare. The motivation behind doing this project is to see if we can predict the water levels in drought conditions as it is a very important issue that California faces. Due to wanting to see how the evaporation rate changes with respect to one changing variable, this approach requires a computational aspect.</p>
-<p>The computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it.</p>
-<p>The specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project</p>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<ul>
-<li><p>Given it is a group project, what will the individual responsibilities be?</p></li>
-<li><p>What exactly is the <em>Dalton equation</em>?</p></li>
-<li><p>Does the evaporation depend on the surface area? Does the area stay constant, or does it get smaller as the level of the lake drops?</p></li>
-<li><p>What is the shape of the ODE? What parameters will you include in the model? Something like:</p></li>
-</ul>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7Bdw%7D%7Bdt%7D%20=%20%5Cldots%0A"></p>
-<p>then</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0Aw_%7Bt+1%7D%20=%20w_t%20+%20%5Cldots%0A"></p>
-<ul>
-<li>In order to make it comparable, use common units (meters, square meters, etc).</li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>ODE</category>
-  <category>group project</category>
-  <category>good</category>
-  <category>evaporation</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/chiemdavie_60703_27030548_Project-Proposal.html</guid>
-  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Rocket Trajectory</title>
-  <dc:creator>Victoria E</dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/espinovictoria_107057_27025750_Untitled.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Using Python I will explore the numerical simulation of a rockets trajectory. Because rocket motion involves nonlinear forces such as gravity, atmoshperic drag, and is time-dependent, using computational methods in python will make calculating a rockets motion much more simpler than trying to do so analytically. Numerical integration will allow me to show the rockets position, velocity and acceleration over time. By creating multiple situations I will be able to show the difference in accuracy and stability.</p>
-<p>A computational approach is required to model the forces acting on the rocket, integrate the equations of motion, and predict the trajectory with sufficient accuracy. Because rocket trajectory is very important in fields such as aerospace engineering and orbital mechanics there are many uses for these types of computations.</p>
-<p>My results will include simulated altitude, velocity and acceleration over time with graphs. I will create scenarios to try to determine when more accurate numerical methods become necessary such as change in thrust or atmospheric drag. Possibly also using these methods to demonstrate rocket trajectory given different environments or on different planets.</p>
-<p>I hope to be able to answer how accurately we can model a rockets flight using python. I also hope to be able to determine how sensitive trajectory predictions are. I will be able to compare my numerical results with actual rocket trajectory data.</p>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
-<p>A good project to reinforce the topics learned in this class. It is time to focus a bit more on a specific trajectory as everything together is quite complex.</p>
-<ul>
-<li><p>Will you use a variable mass for the rocket (fuel burned)</p></li>
-<li><p>Do you include the change in air density?</p></li>
-<li><p>Is the thrust a constant, or time-dependent?</p></li>
-<li><p>Will you use Euler-Cromer or RK4 through <code>odeint()</code>?</p></li>
-<li><p>Is the simulation mainly in outer space (no air drag), or does it include the Earth’s atmosphere?</p></li>
-</ul>
-<p>You could compare the Earth’s atmosphere versus Mars’ atmosphere for example. It is time to write the explicit ODE, generate a model (what to include and what to keep constant?)</p>
-
-
-</section>
-
- ]]></description>
-  <category>ODE</category>
-  <category>good</category>
-  <category>trajectory</category>
-  <category>gravity</category>
-  <category>simulation</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/espinovictoria_107057_27025750_Untitled.html</guid>
+  <category>thermal</category>
+  <category>references</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/mailey.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Guitars Notes Clash</title>
   <dc:creator>Caleb </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/martinezcaleb_35825_27029667_Project.html</link>
+  <link>https://kdruck.com/fp-f25/posts/submissions/caleb.html</link>
   <description><![CDATA[ 
 
 
@@ -587,13 +392,51 @@
   <category>ODE</category>
   <category>challenging</category>
   <category>guitar</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/martinezcaleb_35825_27029667_Project.html</guid>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/caleb.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Rocket Trajectory</title>
+  <dc:creator>Victoria E</dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/victe.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Using Python I will explore the numerical simulation of a rockets trajectory. Because rocket motion involves nonlinear forces such as gravity, atmoshperic drag, and is time-dependent, using computational methods in python will make calculating a rockets motion much more simpler than trying to do so analytically. Numerical integration will allow me to show the rockets position, velocity and acceleration over time. By creating multiple situations I will be able to show the difference in accuracy and stability.</p>
+<p>A computational approach is required to model the forces acting on the rocket, integrate the equations of motion, and predict the trajectory with sufficient accuracy. Because rocket trajectory is very important in fields such as aerospace engineering and orbital mechanics there are many uses for these types of computations.</p>
+<p>My results will include simulated altitude, velocity and acceleration over time with graphs. I will create scenarios to try to determine when more accurate numerical methods become necessary such as change in thrust or atmospheric drag. Possibly also using these methods to demonstrate rocket trajectory given different environments or on different planets.</p>
+<p>I hope to be able to answer how accurately we can model a rockets flight using python. I also hope to be able to determine how sensitive trajectory predictions are. I will be able to compare my numerical results with actual rocket trajectory data.</p>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>A good project to reinforce the topics learned in this class. It is time to focus a bit more on a specific trajectory as everything together is quite complex.</p>
+<ul>
+<li><p>Will you use a variable mass for the rocket (fuel burned)</p></li>
+<li><p>Do you include the change in air density?</p></li>
+<li><p>Is the thrust a constant, or time-dependent?</p></li>
+<li><p>Will you use Euler-Cromer or RK4 through <code>odeint()</code>?</p></li>
+<li><p>Is the simulation mainly in outer space (no air drag), or does it include the Earth’s atmosphere?</p></li>
+</ul>
+<p>You could compare the Earth’s atmosphere versus Mars’ atmosphere for example. It is time to write the explicit ODE, generate a model (what to include and what to keep constant?)</p>
+
+
+</section>
+
+ ]]></description>
+  <category>ODE</category>
+  <category>good</category>
+  <category>trajectory</category>
+  <category>gravity</category>
+  <category>simulation</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/victe.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Using the Fourier Transform to Filter Noise from an ECG Signal</title>
   <dc:creator>Kristy </dc:creator>
-  <link>https://kdruck.com/fp-f25/posts/submissions/coronakristy_159802_27029486_Project_Proposal.html</link>
+  <link>https://kdruck.com/fp-f25/posts/submissions/kristy.html</link>
   <description><![CDATA[ 
 
 
@@ -647,8 +490,180 @@ Before filtering I expect to see a dominant frequency that simulates a heartbeat
   <category>references</category>
   <category>FFT</category>
   <category>good</category>
-  <guid>https://kdruck.com/fp-f25/posts/submissions/coronakristy_159802_27029486_Project_Proposal.html</guid>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/kristy.html</guid>
   <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Stellar Structure</title>
+  <dc:creator>Joseph </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/joseph.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="summary-paragraph" class="level2">
+<h2 class="anchored" data-anchor-id="summary-paragraph">Summary Paragraph</h2>
+<p>For my final project, I aim to investigate basic stellar structure by solving for the equations of state of a star and using the results to construct a synthetic Hertzsprung-Russell (HR) diagram. The composition of the star influences the macroscopic observables such as pressure, temperature and luminosity. Typically, hydrogen and helium dominate the composition of a star influencing its observables. The produced HR diagram will be explored by varying such conditions, specifically the mean molecular weight (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and stellar mass (<img src="https://latex.codecogs.com/png.latex?M">). The project will connect how these parameters influence the macroscopic stellar properties using numerical computation for the solutions of various (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and (<img src="https://latex.codecogs.com/png.latex?M">).</p>
+</section>
+<section id="motivation-background-question" class="level2">
+<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation / Background / Question :</h2>
+<p>In astrophysics, the equations of stellar strucutre consist of nonlinear coupled differential equations that cannot be solved analytically. <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bdp%7D%7Bdr%7D%20=%20%5Cfrac%7B-Gm(r)%5Crho(r)%7D%7Br%5E%7B2%7D%7D%20,%20%20%20%5Cfrac%7BdL%7D%7Bdr%7D%20%20=%204%5Cpi%20r%5E%7B2%7D%20%5Crho(r)%20%5Cepsilon(T,r),%20"> <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7BdT%7D%7Bdr%7D%20=%20%5Cfrac%7B-3%5Ckappa_%7B%5Clambda%7D%5Crho(r)L(r)%7D%7B64%5Cpi%20r%5E%7B2%7D%20%5Csigma%20%5C%20T%5E%7B3%7D(r)%7D,%20%5Cfrac%7Bdm%7D%7Bdr%7D%20=%204%5Cpi%20r%5E%7B2%7D%20%5Crho(r)"> <img src="https://latex.codecogs.com/png.latex?%20P%20=%20%5Cfrac%7B%5Crho%20%5Ckappa%20T%7D%7B%5Cmu%20m_%7BH%7D%7D"> These equations describe hydrostatic equilibrium, mass continuity, luminosty and energy generation. The importance of such equations is to link thermodynamic quantities to the macroscopic observables such as luminosity, radius of the star, and surface temperature. Here, the mean molecular weight is a key parameter in the equation of state as it sets the conditions for the pressure and temperature required to support a given stellar mass. Changes in <img src="https://latex.codecogs.com/png.latex?%5Cmu"> will alter <img src="https://latex.codecogs.com/png.latex?T(r),%5Crho(r)">, and <img src="https://latex.codecogs.com/png.latex?L(r)">. Because of the nonlinear coupling of these equations, numerical integration is required to explore how stellar properties depend on their internal composition.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>By numerically integrating the stellar structure equations for stars of varying mass and mean molecular weight, I expect to produce a value for the density, temperaure, pressure and luminosity for each model. From this, I aim to plot a collection of synthetic data on the HR diagram. I anticipate that increasing <img src="https://latex.codecogs.com/png.latex?%5Cmu"> at some fixed stellar mass will increase the central temperature and luminoisty, shifting stars upward on the HR diagram. Similary, increaing stellar mass I anticipate will produce hotter and more luminous stars, hence shifting the stars upward on the HR diagram as well. Numerical compuataion is essential for this project because of the coupled ODEs being nonlinear and dependent on both <img src="https://latex.codecogs.com/png.latex?%5Cmu"> and <img src="https://latex.codecogs.com/png.latex?M">, preventing me from solving these analytically.</p>
+</section>
+<section id="summaryquestion" class="level2">
+<h2 class="anchored" data-anchor-id="summaryquestion">Summary/Question</h2>
+<p>The central question guiding the project is: How do variations in stellar composition (<img src="https://latex.codecogs.com/png.latex?%5Cmu">) and stellar mass (<img src="https://latex.codecogs.com/png.latex?M">) affect the predicted properties and HR diagram position of stars? I expect to find that higher μ increases the central temperature, nuclear energy generation rate, and luminosity, producing shifts in the HR diagram. Increasing mass will have a similar effect, producing hotter, brighter stars. These synthetic results will be compared qualitatively with observed main-sequence stars and known empirical scaling laws, illustrating how the microscopic physics propagates to macroscopic observable star behavior.</p>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<ul>
+<li><p>Define clearly all the variables; i.e.&nbsp;what is <img src="https://latex.codecogs.com/png.latex?L(r)">, etc. what input parameters do you need? for example <img src="https://latex.codecogs.com/png.latex?%5Ckappa_%7B%5Clambda%7D">, etc.</p></li>
+<li><p>Make simplifications; emissivity = 1, etc.</p></li>
+<li><p>The equations are coupled and have variables that range from small to large. Use dimensionless units as much as possible, so redefine the variables.</p></li>
+<li><p>use <code>odeint()</code> and setup the equations well to solve</p></li>
+<li><p>provide some test cases, what will happen <img src="https://latex.codecogs.com/png.latex?L%20%5Capprox%20m">, etc.</p></li>
+<li><p>Simplify the problem to have a test case; i.e.&nbsp;first solve a simpler problem. What could that be?</p></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>ODE</category>
+  <category>gravity</category>
+  <category>good</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/joseph.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Fractal Gravity</title>
+  <dc:creator>Gavin </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/gavin.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This project aims to simulate the gravitational field that would arise if one assigns mass to the components of a fractal set. To accomplish this, the dimension of the fractal must be finite, thus the perimeter of the fractal must be approximated with a finite number of interactions. Either a <a href="https://en.wikipedia.org/wiki/Koch_snowflake">Koch Snowflake</a>, the Mandelbrot set, the Julia set, or the Burning Ship fractals will be used as the set. The gravitational field must be assigned based on a fractal density function that will be influenced by the chosen resolution of the fractal’s perimeter. An arbitrarily scaled mass is assigned to each point in the set, then the density function is applied, then the resulting gravitational field is calculated.</p>
+<p>If time permits, the behavior of a point particle within the vicinity of the set will be investigated and used to drive a subsidiary fractal. Each point in the finite perimeter is assigned a ‘color’ varying from each end of the visual spectrum. The path of the particle subject to the graviational field will be calculated for varying initial position and velocities, indexed by some <img src="https://latex.codecogs.com/png.latex?i,j">. Iterating thrugh this process, the first point at which the particle’s position is equal to a point in the set, the color of this point will be assigned to that specific <img src="https://latex.codecogs.com/png.latex?i,j">. Next, all points <img src="https://latex.codecogs.com/png.latex?i,j"> will be plotted on a phase space plot of <img src="https://latex.codecogs.com/png.latex?i"> vs <img src="https://latex.codecogs.com/png.latex?j"> with their assigned color. Depending on the behavior of the fractal’s gravitational field, this phase space plot my resemble ‘fractal’ like patterns.</p>
+</section>
+<section id="motivation-background-question" class="level2">
+<h2 class="anchored" data-anchor-id="motivation-background-question">Motivation / Background / Question</h2>
+<p><a href="https://arxiv.org/abs/1210.0282">Fractal billiards</a> is the most closely related field of study. Typically perfeclty elastic particles (billiards) are placed within a fractal, treating the points along it’s boundary as a rigid barrier. Assigning the billiards some mass, initial position, and initial speed, their kinematics are analyzed for patterns. As far as I am aware, no study has assigned the fractal <em>itself</em> a mass. I believe it may be interesting to see what kind of gravitational field arises from the fractal’s underlying pattern. It could be a trivial one, with the ‘center of mass’ as the center of a radial field, however when accounting for the varying density of a fractal set, I believe the resulting field could be non-trivial and thus give rise to interesting dynamics.</p>
+<p>The definition of a fractal requires that it be an infinitely complex and self similar pattern, meaning one may never calculate a fractal to it’s ‘full’ extent. This means computationally, the fractal must be approximated to some finite degree which introduces a need for numerical methods.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results:</h2>
+<p>I intend to show the gravitational vector field that arises from the fractal. This must be calculated numerically as the fractal is being approximated to a finite degree and can no longer be treated analytically.</p>
+<p>If time permits, I intend to create the phase space plot of the partile’s behavior as described above. This does pose a significant computational challenge as the resolution of the indexing for the position and velocity will weight heavily on computation time. The current structure of this approach essentially will require two embedded <code>for</code> loops for the indices, then a third embedded <code>while</code> loop for the path calculation. Depending on how computationally expensive this becomes, the approach may have to be reconfigured, or a degree of freedom may be removed (i.e.&nbsp;fixing initial speed).</p>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<p>This project aims to answer two main questions:</p>
+<ul>
+<li>Does assigning mass to a fractal produce a nontrivial gravitational field?</li>
+<li>Do the kinematics of a point particle within the vicinity of a fractal with mass give rise to a subsidiary fractal?</li>
+</ul>
+<p>As these questions have not yet been explored (as far as I am aware), data does not yet exist for the results of this project to be compared to. Somewhat similar procedures for calculating subsidiary fractals have been carried out for systems like the three body problem and a ball bouncing within a semi circle. In all known cases, however, the applied field was some analog of a radially inward gravitational field.</p>
+</section>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<ul>
+<li><p>Which fractal will you use?</p></li>
+<li><p>How is exactly is the fractal defined? Which one are you using, will you calculate the gravitational field on a 2D raster? Will you compare the fractal to a non-fractal, say a disk?</p></li>
+<li><p>How large is your 2D grid?</p></li>
+<li><p>For the computation it is best to do it in dimensionless units. You need some normalization or density without units. Therefore, define the gravitational interaction in terms of unitless parameters. Distance will then be measured as part of the grid.</p></li>
+<li><p>How will you visualize your results? Contour plots?</p></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>ODE</category>
+  <category>fractal</category>
+  <category>gravity</category>
+  <category>good</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/gavin.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif" medium="image" type="image/gif"/>
+</item>
+<item>
+  <title>The 3 body problem</title>
+  <dc:creator>Victoria G and Ivy</dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/victg.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>The 3 body problem takes real data, our orbital diagram of the known solar system, and applies a hypothetical question, what would our Earth look like with 3 masses orbiting Earth itself?</p>
+<p>My motivation itself came from one of my favorite book series <a href="https://en.wikipedia.org/wiki/3_Body_Problem_(TV_series)">The 3 body problem</a>. It takes this idea and explores what different ‘Earths’ would look like, not just in the broader sense, but looks at the climate, what would be considered normal? How would the Sun rise and set? This is my main source of inspiration. While orbits of the solar system has been studied since man first looked up, it was always us orbiting something else, well except for that hiccup in the old times, I am looking at you Eudoxus and Ptolmey with your geocentic theory. Well, I wanted to take what we know about our heliocentric solar system and see what it would take for 3 masses, including the moon, and how it would effect the Earth. Effect the Earth in the way of could it be feasible, how large would the masses have to be, or small, to keep a habital condition here on Earth. This would require a computational approach in more ways then one. It would take the basis of what we know about Newtonian mechanics, which we CAN solve analytically. This idea becomes interesting by that special component of adding a third body, this then turns our approach into a ‘coupled nonlinear differential equation’, which I am currently learning about in my numerical analysis class. Initial conditions would lead to chaotic behavior, and an analytical approach would simply, not be able to keep up.</p>
+<p>This would require pulling my skill sets from past and present classes, including but not limited to; Computational Physics, Analytic Mechanics, Numerical Analysics, Differentional Equations A &amp; B and others. In the extremely basic expectation, I expect larger masses to completely destroy this model, my end result existing in an simulation where Earth would not be habital, gravitational forces itself would not make this possible. I expect possible smaller masses to potentially make this model possible, however how small would be the real finding. More digging would have to be done to see if there was comparable data out there, that would either lead me to believe my findings were heading in the right direction or not.</p>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Great concept, the question and scope needs to be sharpened at this moment. For example, what is “habitability”? Is that defined by temperature, distance, etc? What masses, initial positions and velocities will be probed. The phase space can get very large, since we have 3 bodies, it means 9 starting positions (assuming planets are in one plane). Maybe keep 1 body constant.</p>
+<p>What is stability? Sometimes it may orbit a few times, then a planet will go off. Sometimes, numerical precision limits the orbit.</p>
+<p>Start with a simple system, using realistic parameters, make sure that your numbers are not too small or too large.</p>
+<p>Use energy conservation to make sure that your computation is not running afoul of basic laws. (Issue with the Euler method).</p>
+<p>Best would be to change one parameter at a time, so need to choose which one? Starting position of the moon?</p>
+
+
+</section>
+
+ ]]></description>
+  <category>challenging</category>
+  <category>simulation</category>
+  <category>gravity</category>
+  <category>group project</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/victg.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://upload.wikimedia.org/wikipedia/commons/0/0a/3_Body_Problem_title_card.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Modeling and Visualizing a Binary Black Hole Chirp</title>
+  <dc:creator>Said </dc:creator>
+  <link>https://kdruck.com/fp-f25/posts/submissions/said.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>In this project I will attempt to simulate a gravitational wave chirp signal which is produced by two merging black holes. I can compare it to data from LIGOs detections to see how close my simulation is. Using NumPy, SciPy, and Matplotlib, I will model the inspiral phase using a Newtonian model with gravitational wave energy loss. I want to visualize the resulting waveform, spectrogram, and orbital motion.</p>
+<p>Gravitational waves come from accelerating massive bodies, the binary black holes produce very strong and measurable signals. As they lose energy to radiation their orbits tighten and frequency increases creating the chirp. Because the system evolves nonlinearly I will need numerical integration to generate the waveform to compare with real data.</p>
+<p>My expected results would include the simulated chirp waveform that increases in both amplitude and frequency also a spectrogram showing the time frequency evolution. And an orbital animation of the merging system to visualize what is happening.</p>
+<p>My main question is “Can a simplified model produce the features of a real binary black hole chirp?” I expect the data to match somewhat, and there is comparable data available.</p>
+<section id="comments" class="level2">
+<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<p>Do you start with point sources? There is a lot of data for this kind of problem available.</p>
+<ul>
+<li><p>What starting conditions will you use? What are the initial masses? What are the quantities that you will be using? Can you make them dimensionless for the computation?</p></li>
+<li><p>What is the initial separation distance?</p></li>
+</ul>
+<p>The challenge is to implement the energy loss model. Much of that work is though analytical, not numerical. What is the numerical work that you can do?</p>
+<p>Are you using Newtonian gravity?</p>
+<p>Will you animate the result?</p>
+<p>What data from LIGO can you use for the comparison?</p>
+
+
+</section>
+
+ ]]></description>
+  <category>gravity</category>
+  <category>good</category>
+  <guid>https://kdruck.com/fp-f25/posts/submissions/said.html</guid>
+  <pubDate>Mon, 24 Nov 2025 08:00:00 GMT</pubDate>
+  <media:content url="https://upload.wikimedia.org/wikipedia/commons/d/d4/LIGO_schematic_%28multilang%29.svg" medium="image" type="image/svg+xml"/>
 </item>
 </channel>
 </rss>
