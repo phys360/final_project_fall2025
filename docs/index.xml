@@ -63,11 +63,25 @@
 </section>
 <section id="evaporation-model-extended-tg" class="level2">
 <h2 class="anchored" data-anchor-id="evaporation-model-extended-tg">Evaporation Model Extended (TG)</h2>
+<p>A fascinating topic is evaporation, for example the evaporation of a water droplet or a coffee stain on a table, see <span class="citation" data-cites="nagel1999">Nagel (1999)</span>. Evaporation also plays a role in the California water aqueduct and for reservoirs that use water to generate hydroelectric power.</p>
+<p>Famously, Al Haythem was asked to solve the problem of damming the Nile river more than a 1000 years ago. Although he failed, he became one of the first experimentalists in physics, especially in the area of optics. In the 20th century, however, the Aswan Dam effectively converted a highly variable intra-annual Nile flow into a predictable source of a constant supply. It also produces electrical power. <span class="citation" data-cites="strzepek2008">Strzepek et al. (2008)</span> Prior to the construction and operation of the High Aswan Dam, in 1964, sediment were deposited annually in the flood plain of the Nile. However, afterwards, the sediment started to fill the dam, decreasing the volume. The life span of the dead storage capacity has been estimated at a minimum of about 360 years. <span class="citation" data-cites="shalash1982">Shalash (1982)</span> This number varies, though and depends on the model.</p>
+<p>In the following, let us create a model that helps us understand the evaporation and possibly sedimentation deposition of a reservoir.</p>
+
 
 
 </section>
 
- ]]></description>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-nagel1999" class="csl-entry">
+Nagel, Sidney R. 1999. <span>“Klopsteg Memorial Lecture (August, 1998): Physics at the Breakfast Table<span></span>or Waking up to Physics.”</span> <em>American Journal of Physics</em> 67 (1): 17–25. <a href="https://doi.org/10.1119/1.19186">https://doi.org/10.1119/1.19186</a>.
+</div>
+<div id="ref-shalash1982" class="csl-entry">
+Shalash, S. 1982. <span>“Effects of Sedimentation on the Storage Capacity of the High Aswan Dam Reservoir.”</span> <em>Hydrobiologia</em> 91-92 (1): 623–39. <a href="https://doi.org/10.1007/bf02391977">https://doi.org/10.1007/bf02391977</a>.
+</div>
+<div id="ref-strzepek2008" class="csl-entry">
+Strzepek, Kenneth M., Gary W. Yohe, Richard S. J. Tol, and Mark W. Rosegrant. 2008. <span>“The Value of the High Aswan Dam to the Egyptian Economy.”</span> <em>Ecological Economics</em> 66 (1): 117–26. <a href="https://doi.org/10.1016/j.ecolecon.2007.08.019">https://doi.org/10.1016/j.ecolecon.2007.08.019</a>.
+</div>
+</div></section></div> ]]></description>
   <category>ODE</category>
   <category>group project</category>
   <category>good</category>
