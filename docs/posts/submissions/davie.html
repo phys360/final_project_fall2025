@@ -190,8 +190,8 @@ window.Quarto = {
 <p>The computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it.</p>
 <p>The specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project</p>
 </section>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+<section id="comments-tg" class="level2">
+<h2 class="anchored" data-anchor-id="comments-tg">Comments (TG)</h2>
 <ul>
 <li><p>Given it is a group project, what will the individual responsibilities be?</p></li>
 <li><p>What exactly is the <em>Dalton equation</em>?</p></li>
@@ -209,8 +209,9 @@ w_{t+1} = w_t + \ldots
 <li>In order to make it comparable, use common units (meters, square meters, etc).</li>
 </ul>
 </section>
-<section id="model" class="level2">
-<h2 class="anchored" data-anchor-id="model">Model</h2>
+<section id="model-dc" class="level2">
+<h2 class="anchored" data-anchor-id="model-dc">Model (DC)</h2>
+<p>Based on <a href="https://www.sciencedirect.com/science/article/pii/S002216940600326X">Science Direct: Evaporation Equation</a></p>
 <p><span class="math inline">\(E_{PEN} = 0.047R_S\sqrt{T + 9.5} - 2.4(R_S /R_A)^2 + 0.09(T+20)(1- RH/100)\)</span></p>
 <p><span class="math inline">\(RH\)</span> = relative humidity</p>
 <p><span class="math inline">\(T\)</span> = air temperature for the day</p>
@@ -218,15 +219,20 @@ w_{t+1} = w_t + \ldots
 <p><span class="math inline">\(R_A\)</span> = Extraterrestial Radiation Estimation - <span class="math inline">\(\phi\)</span> = latitude of area - <span class="math inline">\(R_A = 3N\sin{(0.131N-0.95\phi)}\)</span> for <span class="math inline">\(|\phi| &gt; \frac{23.5\pi}{180}\)</span> - <span class="math inline">\(R_A = 118N^{0.2}\sin{(0.131N-0.2\phi)}\)</span> for <span class="math inline">\(|\phi| &lt; \frac{23.5\pi}{180}\)</span></p>
 <p><span class="math inline">\(R_S\)</span> = Solar Radiation - <span class="math inline">\(n\)</span> = sunshine hours in month - <span class="math inline">\(R_S\)</span> = <span class="math inline">\(R_A(0.5+0.25(\frac{n}{N}))\)</span></p>
 <p><strong>ODE</strong>:</p>
-<p><span class="math inline">\(\frac{dV}{dt} = Inflow(t) - Outflow(t) + Precipitation(t) - Evaporation(T, t)*(\frac{dA}{dt})\)</span> - <span class="math inline">\(V\)</span> = Volume - <span class="math inline">\(A\)</span> = Area</p>
+<p><span class="math display">\[
+\frac{dV}{dt} = Inflow(t) - Outflow(t) + Precipitation(t) - Evaporation(T, t)*(\frac{dA}{dt})
+\]</span></p>
+<ul>
+<li><span class="math inline">\(V\)</span> = Volume</li>
+<li><span class="math inline">\(A\)</span> = Area</li>
+</ul>
 <p><span class="math inline">\(or\)</span></p>
 <p><span class="math inline">\(\frac{dh}{dt} = Inflow(t) - Outflow(t) + Precipitation(t) - Evaporation(T, t)\)</span> - <span class="math inline">\(h\)</span> = height</p>
-<section id="references" class="level3">
-<h3 class="anchored" data-anchor-id="references">References</h3>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S002216940600326X">Science Direct: Evaporation Equation</a></p>
-
-
 </section>
+<section id="evaporation-model-extended-tg" class="level2">
+<h2 class="anchored" data-anchor-id="evaporation-model-extended-tg">Evaporation Model Extended (TG)</h2>
+
+
 </section>
 
 </main> <!-- /main -->
