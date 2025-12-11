@@ -254,6 +254,30 @@ w_{t+1} = w_t + \ldots
 <p>A fascinating topic is evaporation, for example the evaporation of a water droplet or a coffee stain on a table, see <span class="citation" data-cites="nagel1999">Nagel (<a href="#ref-nagel1999" role="doc-biblioref">1999</a>)</span>. Evaporation also plays a role in the California water aqueduct and for reservoirs that use water to generate hydroelectric power.</p>
 <p>Famously, Al Haythem was asked to solve the problem of damming the Nile river more than a 1000 years ago. Although he failed, he became one of the first experimentalists in physics, especially in the area of optics. In the 20th century, however, the Aswan Dam effectively converted a highly variable intra-annual Nile flow into a predictable source of a constant supply. It also produces electrical power. <span class="citation" data-cites="strzepek2008">Strzepek et al. (<a href="#ref-strzepek2008" role="doc-biblioref">2008</a>)</span> Prior to the construction and operation of the High Aswan Dam, in 1964, sediment were deposited annually in the flood plain of the Nile. However, afterwards, the sediment started to fill the dam, decreasing the volume. The life span of the dead storage capacity has been estimated at a minimum of about 360 years. <span class="citation" data-cites="shalash1982">Shalash (<a href="#ref-shalash1982" role="doc-biblioref">1982</a>)</span> This number varies, though and depends on the model.</p>
 <p>In the following, let us create a model that helps us understand the evaporation and possibly sedimentation deposition of a reservoir.</p>
+<p>Consider the following model. The water level is at a height <span class="math inline">\(h(t)\)</span>. Meanwhile, we know that we have <span class="math inline">\(S(t)\)</span> amount of sediment (cubic meter) depositing in the reservoir. The temperature <span class="math inline">\(T(t)\)</span> also varies with the seasons and with the day.</p>
+<p>The water volume of the lake is then time-dependent:</p>
+<p><span class="math display">\[
+\frac{dh}{dt} = \frac{Q_{\text{in}}(t) - Q_{\text{out}}(t) - Q_{\text{evap}}(h(t), T(t)) + Q_{\text{rain}}(t) + \frac{dS}{dt}}{A(h)}
+\]</span></p>
+<p>We can say that <span class="math inline">\(Q_{in}\)</span> changes with the seasons:</p>
+<p><span class="math display">\[
+Q_{\text{in}}(t) = B_0 + B_1 \cos^2(\omega_B t)
+\]</span></p>
+<p>We have <span class="math inline">\(\omega_B = \pi/T\)</span>, where <span class="math inline">\(T\)</span> is one year, so that we have seasonal in-flow. For the outflow, we can assume a constant, so <span class="math inline">\(Q_{\text{out}}(t) = D_0\)</span>. In the first model, we can ignore <span class="math inline">\(Q_{\text{rain}}\)</span> and ignore sedimentation as well.</p>
+<p>This leaves the evaporation, which depends on temperature <span class="math inline">\(T(t)\)</span> and also <span class="math inline">\(h(t)\)</span>. Generally, the higher the temperature, the higher the evaporation, so we could write something of the effect:</p>
+<p><span class="math display">\[
+Q_{\text{evap}} = \gamma(T(t)-T_0) A_s(h)
+\]</span></p>
+<p>where <span class="math inline">\(\gamma\)</span> is some parameter related to temperature and evaporation and <span class="math inline">\(A_s\)</span> is the surface area, the more area, the larger the amount of evaporated water. Note that <span class="math inline">\(Q\)</span> has units of volume per time or cubic meter per second. That means that <span class="math inline">\(\gamma\)</span> has units of [m/K/s] or speed per temperature. If the temperature reaches <span class="math inline">\(T_0\)</span>, then there is essentially no more evaporation; this could be close to freezing temperature, around 275 K.</p>
+<p>The shape of the reservoir is important, it could have the following shape with the radius <span class="math inline">\(r\)</span> linearly increasing with height. At the full height <span class="math inline">\(H\)</span>, we have <span class="math inline">\(r(H)=R\)</span>, so the top radius. At <span class="math inline">\(r(0)=0\)</span>. Probably <span class="math inline">\(R&gt;H\)</span>.</p>
+<p><span class="math display">\[
+r(h) = \frac{R}{H}h
+\]</span></p>
+<p>We can now calculate the surface area <span class="math inline">\(A(h) = 2Lr(h)\)</span> based on the lake length <span class="math inline">\(L\)</span>, assuming that the length does not change (might need to model that later).</p>
+<p>This gives us the following ODE, for the mean temperature <span class="math inline">\(T_m\)</span> and the seasonal temperature change of <span class="math inline">\(T_a\)</span> as well as <span class="math inline">\(\omega_T = 2\pi/T\)</span>, where <span class="math inline">\(T=1\)</span> year.</p>
+<p><span class="math display">\[
+\frac{dh}{dt} = \frac{B_0 + B_1 \cos^2(\omega_B t) -D_0 - \gamma(T_m+T_a\cos(\omega_T t)-T_0) 2L \frac{R}{H}h  }{ 2L \frac{R}{H}h }
+\]</span> This means we have a first-order differential equation that we can numerically solve.</p>
 
 
 

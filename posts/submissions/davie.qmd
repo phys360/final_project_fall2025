@@ -148,3 +148,61 @@ varies, though and depends on the model.
 
 In the following, let us create a model that helps us understand the
 evaporation and possibly sedimentation deposition of a reservoir.
+
+Consider the following model. The water level is at a height $h(t)$.
+Meanwhile, we know that we have $S(t)$ amount of sediment (cubic meter)
+depositing in the reservoir. The temperature $T(t)$ also varies with the
+seasons and with the day.
+
+The water volume of the lake is then time-dependent:
+
+$$
+\frac{dh}{dt} = \frac{Q_{\text{in}}(t) - Q_{\text{out}}(t) - Q_{\text{evap}}(h(t), T(t)) + Q_{\text{rain}}(t) + \frac{dS}{dt}}{A(h)}
+$$
+
+We can say that $Q_{in}$ changes with the seasons:
+
+$$
+Q_{\text{in}}(t) = B_0 + B_1 \cos^2(\omega_B t)
+$$
+
+We have $\omega_B = \pi/T$, where $T$ is one year, so that we have
+seasonal in-flow. For the outflow, we can assume a constant, so
+$Q_{\text{out}}(t) = D_0$. In the first model, we can ignore
+$Q_{\text{rain}}$ and ignore sedimentation as well.
+
+This leaves the evaporation, which depends on temperature $T(t)$ and
+also $h(t)$. Generally, the higher the temperature, the higher the
+evaporation, so we could write something of the effect:
+
+$$
+Q_{\text{evap}} = \gamma(T(t)-T_0) A_s(h)
+$$
+
+where $\gamma$ is some parameter related to temperature and evaporation
+and $A_s$ is the surface area, the more area, the larger the amount of
+evaporated water. Note that $Q$ has units of volume per time or cubic
+meter per second. That means that $\gamma$ has units of \[m/K/s\] or
+speed per temperature. If the temperature reaches $T_0$, then there is
+essentially no more evaporation; this could be close to freezing
+temperature, around 275 K.
+
+The shape of the reservoir is important, it could have the following
+shape with the radius $r$ linearly increasing with height. At the full
+height $H$, we have $r(H)=R$, so the top radius. At $r(0)=0$. Probably
+$R>H$.
+
+$$
+r(h) = \frac{R}{H}h
+$$
+
+We can now calculate the surface area $A(h) = 2Lr(h)$ based on the lake
+length $L$, assuming that the length does not change (might need to
+model that later).
+
+This gives us the following ODE, for the mean temperature $T_m$ and the seasonal temperature change of $T_a$ as well as $\omega_T = 2\pi/T$, where $T=1$ year.
+
+$$
+\frac{dh}{dt} = \frac{B_0 + B_1 \cos^2(\omega_B t) -D_0 - \gamma(T_m+T_a\cos(\omega_T t)-T_0) 2L \frac{R}{H}h  }{ 2L \frac{R}{H}h }
+$$
+This means we have a first-order differential equation that we can numerically solve.
