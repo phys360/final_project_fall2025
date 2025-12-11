@@ -21,12 +21,15 @@
 
 
 
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>The project itself has two parts to the computational aspect when simulating the conditions of a drought. The first being that the amount of percipitation is defined and held constant for what would be considered as below average in the region. This region we wish to explore is the Oroville reservoir and the conversion from inches of rain into the water level unit of acre feet is found via getting the total catchment area and then multiply by the rainfall. Then from there, using one of the evaporation formulas, in this case, we plan on using the <a href="https://www.ldeo.columbia.edu/~martins/hydro/homework/evaporation.html">Dalton equation</a>, we would choose what variable would be fluctuating to change the evaporation rate over a period of time. For example, using sympy, we would take the partial derivative in terms of humidity and then get the evaporation rates once setting the other variables constant and a changing humidity via an ODE equation. From there, we would get a list of evaporation results for the period of time we plan of calculating the period of the drought, in this case, 365 days with 365 evaporation results. After that, we would set the amount of water that the reservoir currently has at the start and set the constants. Then the formula of the Water Level = Amount Stored + Inflow - Outflow - Evaporation rates using all 365 days would be applied and finally graphed for the water level versus time. We could also get a graph of the evaporation rate per the changing variable.</p>
 <p>What is known in this field is the actual water levels that we can compare to for the span of time we wish to compare. The motivation behind doing this project is to see if we can predict the water levels in drought conditions as it is a very important issue that California faces. Due to wanting to see how the evaporation rate changes with respect to one changing variable, this approach requires a computational aspect.</p>
 <p>The computational can answer questions about the reservoir as it predicts the amount of water that will remain with drought conditions. If the computational part also yields results that are similar to one reservoir, it can also be applied to dam or reservoir that is under construction and the worst case scenario if a drought persists as if there is too much outflow for usage that will result in the eventual loss of the water in the reservoir, this computational project could indicate it.</p>
 <p>The specific question we wish to answer is the impact of the water levels in a changing evaporation rate. Subsequently, we can also take the evaporation formula and see how much it would affect the evaporation rate if another variable is changed and the impact of it on the reservoir. Or, removing the amount of inflow and outflow of the reservoir, we can see how much the changing evaporation rate affects the water levels by itself and theoretically calculate the time in which the water levels have a all dried up. As there is reservoir data available, we can compare our results and see if the results of this computational project</p>
-<section id="comments" class="level2">
-<h2 class="anchored" data-anchor-id="comments">Comments</h2>
+</section>
+<section id="comments-tg" class="level2">
+<h2 class="anchored" data-anchor-id="comments-tg">Comments (TG)</h2>
 <ul>
 <li><p>Given it is a group project, what will the individual responsibilities be?</p></li>
 <li><p>What exactly is the <em>Dalton equation</em>?</p></li>
@@ -39,6 +42,27 @@
 <ul>
 <li>In order to make it comparable, use common units (meters, square meters, etc).</li>
 </ul>
+</section>
+<section id="model-dc" class="level2">
+<h2 class="anchored" data-anchor-id="model-dc">Model (DC)</h2>
+<p>Based on <a href="https://www.sciencedirect.com/science/article/pii/S002216940600326X">Science Direct: Evaporation Equation</a></p>
+<p><img src="https://latex.codecogs.com/png.latex?E_%7BPEN%7D%20=%200.047R_S%5Csqrt%7BT%20+%209.5%7D%20-%202.4(R_S%20/R_A)%5E2%20+%200.09(T+20)(1-%20RH/100)"></p>
+<p><img src="https://latex.codecogs.com/png.latex?RH"> = relative humidity</p>
+<p><img src="https://latex.codecogs.com/png.latex?T"> = air temperature for the day</p>
+<p><img src="https://latex.codecogs.com/png.latex?N"> = 4<img src="https://latex.codecogs.com/png.latex?%5Cphi%5Csin%7B(0.53i%20-1.65)%7D+12"> - <img src="https://latex.codecogs.com/png.latex?%5Cphi"> = latitude of area - <img src="https://latex.codecogs.com/png.latex?i"> = month; June being i = 6 for example</p>
+<p><img src="https://latex.codecogs.com/png.latex?R_A"> = Extraterrestial Radiation Estimation - <img src="https://latex.codecogs.com/png.latex?%5Cphi"> = latitude of area - <img src="https://latex.codecogs.com/png.latex?R_A%20=%203N%5Csin%7B(0.131N-0.95%5Cphi)%7D"> for <img src="https://latex.codecogs.com/png.latex?%7C%5Cphi%7C%20%3E%20%5Cfrac%7B23.5%5Cpi%7D%7B180%7D"> - <img src="https://latex.codecogs.com/png.latex?R_A%20=%20118N%5E%7B0.2%7D%5Csin%7B(0.131N-0.2%5Cphi)%7D"> for <img src="https://latex.codecogs.com/png.latex?%7C%5Cphi%7C%20%3C%20%5Cfrac%7B23.5%5Cpi%7D%7B180%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?R_S"> = Solar Radiation - <img src="https://latex.codecogs.com/png.latex?n"> = sunshine hours in month - <img src="https://latex.codecogs.com/png.latex?R_S"> = <img src="https://latex.codecogs.com/png.latex?R_A(0.5+0.25(%5Cfrac%7Bn%7D%7BN%7D))"></p>
+<p><strong>ODE</strong>:</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Cfrac%7BdV%7D%7Bdt%7D%20=%20Inflow(t)%20-%20Outflow(t)%20+%20Precipitation(t)%20-%20Evaporation(T,%20t)*(%5Cfrac%7BdA%7D%7Bdt%7D)%0A"></p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?V"> = Volume</li>
+<li><img src="https://latex.codecogs.com/png.latex?A"> = Area</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?or"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bdh%7D%7Bdt%7D%20=%20Inflow(t)%20-%20Outflow(t)%20+%20Precipitation(t)%20-%20Evaporation(T,%20t)"> - <img src="https://latex.codecogs.com/png.latex?h"> = height</p>
+</section>
+<section id="evaporation-model-extended-tg" class="level2">
+<h2 class="anchored" data-anchor-id="evaporation-model-extended-tg">Evaporation Model Extended (TG)</h2>
 
 
 </section>
